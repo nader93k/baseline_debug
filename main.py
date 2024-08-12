@@ -41,6 +41,12 @@ parser.add_argument(
     "--outfile", type=str, default="repairs",
     help="the output file containing found repairs")
 parser.add_argument(
+    "--ignore_white_list", action="store_true",
+    help="ignore white list plans")
+parser.add_argument(
+    "--ignore_black_list", action="store_true",
+    help="ignore black list plans")
+parser.add_argument(
         "--log",
         type=str, default="INFO",
         help="level for logging")
@@ -71,20 +77,22 @@ if __name__ == '__main__':
         black_dir = os.path.join(task_dir, args.black_list_dir)
         _plan_filter = lambda x: lambda y: y[:len(x)] == x and "idx" not in y
         plans = []
-        white_list = filter(
-            _plan_filter(args.white_plan),
-            os.listdir(white_dir))
-        black_list = filter(
-            _plan_filter(args.black_plan),
-            os.listdir(black_dir))
-        for plan in white_list:
-            plan_file = os.path.join(white_dir, plan)
-            plans.append(PositivePlan(plan_file))
-        for plan in black_list:
-            plan_file = os.path.join(black_dir, plan)
-            with open(plan_file + ".idx", "r") as f:
-                idx = int(f.readline())
-            plans.append(NegativePlan(plan_file, idx))
+        if not args.ignore_white_list:
+            white_list = filter(
+                _plan_filter(args.white_plan),
+                os.listdir(white_dir))
+            for plan in white_list:
+                plan_file = os.path.join(white_dir, plan)
+                plans.append(PositivePlan(plan_file))
+        if not args.ignore_black_list:
+            black_list = filter(
+                _plan_filter(args.black_plan),
+                os.listdir(black_dir))
+            for plan in black_list:
+                plan_file = os.path.join(black_dir, plan)
+                with open(plan_file + ".idx", "r") as f:
+                    idx = int(f.readline())
+                plans.append(NegativePlan(plan_file, idx))
         if len(plans) == 0:
             continue
         instances.append((task, plans))

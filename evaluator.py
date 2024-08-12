@@ -12,6 +12,12 @@ parser.add_argument(
     "benchmarks_dir", type=str,
     help="path to the directory of benchmarks")
 parser.add_argument(
+    "--ignore_white_list", action="store_true",
+    help="ignore white list")
+parser.add_argument(
+    "--ignore_black_list", action="store_true",
+    help="ignore black list")
+parser.add_argument(
     "--num_cpus", type=int,
     help="number of CPUs used")
 parser.add_argument(
@@ -84,6 +90,10 @@ def evaluate(root):
             "domain-modified.pddl",
             "--outfile",
             outfile]
+        if args.ignore_white_list:
+            cmd.append("--ignore_white_list")
+        elif args.ignore_black_list:
+            cmd.append("--ignore_black_list")
         cmd = " ".join(cmd)
         proc = subprocess.Popen(
             cmd, executable="/bin/bash",
