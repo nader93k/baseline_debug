@@ -145,27 +145,35 @@ class PositivePlan(Plan):
             has_neg_conf = False
             name = self._steps[idx][0]
             action = domain.get_action(name)
+            current_mapping = self._var_mapping[idx][-1]
             missing = match_missing_effs(
                 action,
                 self._var_mapping[idx][-1],
                 self._atom)
             # TODO: capture the case where a negative effect is added while the same positive effect exists
             for atom in missing:
+                if atom.negated:
+                    grounding = tuple(current_mapping[arg].name for arg in atom.args)
+                    counter_part = Atom(atom.predicate, grounding)
+                    existing_positive_effs = match_existing_effs(
+                            action, self._var_mapping[idx][-1], counter_part)
+                    if len(existing_positive_effs) > 0:
+                        continue
                 repair = RepairEffs(name, atom, 1)
                 conflict.add(repair)
                 for r in repair.negate():
                     if r in domain.repairs:
                         has_neg_conf = True
-            if not self._atom.negated:
-                existing = match_existing_effs(
-                    action,
-                    self._var_mapping[idx][-1],
-                    self._atom.negate())
-            else:
-                existing = match_existing_effs(
-                    action,
-                    self._var_mapping[idx][-1],
-                    self._atom)
+            # if not self._atom.negated:
+            existing = match_existing_effs(
+                action,
+                self._var_mapping[idx][-1],
+                self._atom.negate())
+            # else:
+            #     existing = match_existing_effs(
+            #         action,
+            #         self._var_mapping[idx][-1],
+            #         self._atom)
             if len(existing) > 0:
                 for atom in existing:
                     repair = RepairEffs(name, atom, -1)
@@ -251,6 +259,13 @@ class NegativePlan(PositivePlan):
                         continue
                     if atom.negated and (atom.negate() in set(eff.literal for eff in prev_action.effects)):
                         continue
+                    if atom.negated:
+                        grounding = tuple(prev_mapping[arg].name for arg in atom.args)
+                        counter_part = Atom(atom.predicate, grounding)
+                        existing_positive_effs = match_existing_effs(
+                            prev_action, prev_mapping, counter_part)
+                        if len(existing_positive_effs) > 0:
+                            continue
                     repair = RepairEffs(prev_action.name, atom, 1)
                     has_neg_repair = False
                     for neg in repair.negate():

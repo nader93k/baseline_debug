@@ -19,8 +19,9 @@ class Repairer:
         _idx_to_repair = {}
         # hitter = Hitter()
         hitter = MaxSATHitter()
-        # cached_conflicts = []
-        # cached = []
+        cached_confs = []
+        cached_conflicts = []
+        cached = []
         while True:
             candidate = hitter.top()
             candidate = set(_idx_to_repair[x] for x in candidate)
@@ -30,12 +31,13 @@ class Repairer:
                 logging.debug(msg)
             logging.debug("end printing candidate")
             # for e in cached:
-            #     assert(candidate != e)
+            #     if candidate == e:
+            #         print("error")
             # cached.append(candidate)
             domain.repairs = candidate
             domain.update()
             domain.repaired = True
-            confs = set()
+            # confs = set()
             for instance in instances:
                 task, plans = instance
                 for i, plan in enumerate(plans):
@@ -44,8 +46,8 @@ class Repairer:
                     if not succeed:
                         domain.repaired = False
                         conf = plan.compute_conflict(domain)
-                        confs.add(tuple(conf))
-                        # cached_conflicts.append(conf)
+                        # confs.add(tuple(conf))
+                        # cached_confs.append(conf)
                         conflict = []
                         for r in conf:
                             if r not in _repair_to_idx:
@@ -61,6 +63,7 @@ class Repairer:
                                     r.condition, _repair_to_idx[r])
                             logging.debug(msg)
                         hitter.add_conflict(conflict)
+                        # cached_conflicts.append(conflict)
                     logging.debug("end conflict for the {}th plan".format(i))
             if domain.repaired:
                 self._repairs = candidate
