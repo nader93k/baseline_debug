@@ -1,0 +1,696 @@
+(define (problem sliterlink-612963)                       (:domain slitherlink)                       (:objects cell-outside-7-left - cell
+cell-5-4 - cell
+cell-6-4 - cell
+n-7-5 - node
+cell-outside-4-down - cell
+cell-2-1 - cell
+cell-outside-1-left - cell
+cell-1-1 - cell
+n-3-2 - node
+cell-6-1 - cell
+cell-outside-8-left - cell
+n-1-4 - node
+cell-0-3 - cell
+n-6-5 - node
+n-3-3 - node
+cell-3-3 - cell
+cell-outside-1-up - cell
+cell-7-4 - cell
+n-4-3 - node
+n-8-5 - node
+n-9-5 - node
+cell-2-3 - cell
+cell-outside-5-left - cell
+cell-5-3 - cell
+n-5-3 - node
+cell-1-0 - cell
+n-1-1 - node
+cell-outside-4-up - cell
+n-8-2 - node
+n-9-0 - node
+cell-0-4 - cell
+n-0-5 - node
+n-3-5 - node
+n-8-3 - node
+n-6-2 - node
+cell-4-1 - cell
+cell-outside-2-down - cell
+n-9-4 - node
+n-7-3 - node
+n-8-4 - node
+cell-outside-1-right - cell
+n-6-1 - node
+n-4-1 - node
+n-0-4 - node
+n-3-4 - node
+n-5-5 - node
+cell-0-0 - cell
+n-9-1 - node
+cell-4-4 - cell
+cap-2 - cell-capacity-level
+cell-outside-6-right - cell
+cell-3-1 - cell
+n-7-2 - node
+cell-outside-7-right - cell
+cell-6-3 - cell
+cell-7-0 - cell
+n-1-0 - node
+n-1-5 - node
+cell-7-1 - cell
+cell-3-4 - cell
+cell-2-4 - cell
+n-1-2 - node
+cell-outside-0-up - cell
+cell-3-0 - cell
+n-9-2 - node
+cell-5-0 - cell
+cell-5-2 - cell
+n-6-3 - node
+cell-8-1 - cell
+cell-8-2 - cell
+n-4-0 - node
+n-8-1 - node
+n-5-0 - node
+n-5-1 - node
+n-0-2 - node
+n-4-5 - node
+cell-outside-2-up - cell
+cell-2-0 - cell
+cell-7-3 - cell
+cell-outside-4-left - cell
+n-0-1 - node
+cell-2-2 - cell
+n-4-4 - node
+cell-outside-8-right - cell
+n-7-1 - node
+cell-3-2 - cell
+n-7-4 - node
+cell-1-2 - cell
+cell-6-0 - cell
+cap-0 - cell-capacity-level
+cap-4 - cell-capacity-level
+n-8-0 - node
+n-2-5 - node
+cell-outside-5-right - cell
+cell-outside-2-right - cell
+n-2-0 - node
+cell-4-3 - cell
+n-3-0 - node
+cell-7-2 - cell
+n-1-3 - node
+cell-4-2 - cell
+n-2-4 - node
+cell-outside-0-right - cell
+n-0-3 - node
+n-7-0 - node
+cell-8-3 - cell
+cell-outside-3-right - cell
+n-3-1 - node
+n-6-4 - node
+n-5-4 - node
+n-2-2 - node
+cell-1-3 - cell
+n-0-0 - node
+cell-outside-1-down - cell
+cell-outside-3-left - cell
+cell-outside-3-down - cell
+n-6-0 - node
+cell-outside-4-right - cell
+n-2-3 - node
+cell-8-4 - cell
+cell-outside-3-up - cell
+cap-3 - cell-capacity-level
+cell-5-1 - cell
+cell-4-0 - cell
+n-9-3 - node
+cell-outside-2-left - cell
+cell-8-0 - cell
+cell-0-1 - cell
+n-5-2 - node
+cell-0-2 - cell
+cell-6-2 - cell
+n-2-1 - node
+cell-1-4 - cell
+cell-outside-0-down - cell
+cell-outside-6-left - cell
+n-4-2 - node
+cell-outside-0-left - cell
+cap-1 - cell-capacity-level)                        (:init (cell-edge cell-3-4 cell-4-4 n-4-4 n-4-5)
+(cell-capacity-copy cell-outside-4-left cap-1)
+(cell-capacity-copy cell-2-0 cap-3)
+(cell-capacity cell-3-1 cap-4)
+(cell-capacity cell-outside-7-right cap-1)
+(cell-capacity cell-8-2 cap-4)
+(node-degree0-copy n-8-5)
+(cell-capacity-inc-copy cap-3 cap-4)
+(cell-edge-copy cell-outside-6-left cell-6-0 n-6-0 n-7-0)
+(cell-capacity-copy cell-outside-8-left cap-1)
+(cell-capacity-copy cell-5-2 cap-4)
+(cell-edge-copy cell-2-0 cell-2-1 n-2-1 n-3-1)
+(cell-capacity cell-outside-1-up cap-1)
+(cell-capacity cell-2-2 cap-4)
+(cell-edge-copy cell-0-1 cell-1-1 n-1-1 n-1-2)
+(cell-edge cell-1-2 cell-2-2 n-2-2 n-2-3)
+(cell-edge-copy cell-4-2 cell-5-2 n-5-2 n-5-3)
+(node-degree0 n-4-2)
+(cell-edge cell-8-4 cell-outside-4-down n-9-4 n-9-5)
+(cell-edge-copy cell-outside-2-up cell-0-2 n-0-2 n-0-3)
+(cell-edge-copy cell-3-4 cell-outside-3-right n-3-5 n-4-5)
+(cell-edge cell-8-4 cell-outside-8-right n-8-5 n-9-5)
+(cell-edge-copy cell-3-1 cell-3-2 n-3-2 n-4-2)
+(cell-edge-copy cell-1-3 cell-2-3 n-2-3 n-2-4)
+(cell-capacity cell-6-4 cap-4)
+(node-degree0 n-9-1)
+(cell-edge cell-4-1 cell-5-1 n-5-1 n-5-2)
+(cell-capacity-copy cell-3-0 cap-4)
+(cell-edge cell-7-2 cell-7-3 n-7-3 n-8-3)
+(node-degree0 n-2-5)
+(node-degree0 n-7-0)
+(node-degree0-copy n-1-4)
+(cell-edge-copy cell-5-2 cell-5-3 n-5-3 n-6-3)
+(cell-edge cell-3-1 cell-4-1 n-4-1 n-4-2)
+(cell-capacity-copy cell-3-2 cap-4)
+(cell-edge-copy cell-2-2 cell-3-2 n-3-2 n-3-3)
+(cell-capacity-copy cell-outside-4-up cap-1)
+(cell-capacity-inc cap-1 cap-2)
+(node-degree0-copy n-7-4)
+(cell-capacity cell-outside-3-left cap-1)
+(cell-capacity cell-outside-1-left cap-1)
+(cell-edge-copy cell-6-3 cell-7-3 n-7-3 n-7-4)
+(cell-edge cell-0-1 cell-1-1 n-1-1 n-1-2)
+(cell-edge-copy cell-outside-3-up cell-0-3 n-0-3 n-0-4)
+(node-degree0 n-6-1)
+(cell-capacity cell-outside-3-right cap-1)
+(cell-capacity-copy cell-3-1 cap-4)
+(cell-capacity-copy cell-8-2 cap-4)
+(cell-edge cell-outside-2-up cell-0-2 n-0-2 n-0-3)
+(cell-capacity cell-outside-7-left cap-1)
+(cell-capacity cell-outside-0-up cap-1)
+(cell-capacity-inc-copy cap-1 cap-2)
+(cell-edge-copy cell-2-2 cell-2-3 n-2-3 n-3-3)
+(cell-capacity cell-8-0 cap-4)
+(cell-capacity-copy cell-outside-1-up cap-1)
+(cell-capacity-copy cell-2-2 cap-4)
+(node-degree0 n-4-4)
+(cell-edge cell-3-3 cell-3-4 n-3-4 n-4-4)
+(cell-edge cell-7-4 cell-outside-7-right n-7-5 n-8-5)
+(node-degree0 n-6-4)
+(cell-edge-copy cell-7-0 cell-7-1 n-7-1 n-8-1)
+(node-degree0-copy n-9-2)
+(cell-capacity-copy cell-6-4 cap-4)
+(cell-edge cell-1-1 cell-1-2 n-1-2 n-2-2)
+(cell-edge cell-3-2 cell-3-3 n-3-3 n-4-3)
+(node-degree0-copy n-1-5)
+(cell-edge cell-6-3 cell-7-3 n-7-3 n-7-4)
+(cell-edge-copy cell-2-3 cell-2-4 n-2-4 n-3-4)
+(cell-capacity cell-1-3 cap-3)
+(cell-edge cell-2-0 cell-3-0 n-3-0 n-3-1)
+(cell-edge cell-outside-3-up cell-0-3 n-0-3 n-0-4)
+(node-degree0-copy n-5-1)
+(cell-capacity cell-6-1 cap-3)
+(node-degree0-copy n-1-1)
+(cell-capacity cell-outside-5-right cap-1)
+(cell-capacity cell-outside-2-right cap-1)
+(cell-edge-copy cell-4-1 cell-4-2 n-4-2 n-5-2)
+(node-degree0-copy n-4-5)
+(cell-edge-copy cell-0-0 cell-1-0 n-1-0 n-1-1)
+(node-degree0 n-4-0)
+(cell-edge-copy cell-7-3 cell-8-3 n-8-3 n-8-4)
+(cell-capacity-copy cell-outside-3-left cap-1)
+(cell-capacity-copy cell-outside-1-left cap-1)
+(node-degree0-copy n-5-4)
+(cell-capacity-copy cell-outside-3-right cap-1)
+(node-degree0 n-2-0)
+(cell-capacity-copy cell-outside-1-right cap-1)
+(cell-capacity-copy cell-outside-7-left cap-1)
+(cell-edge cell-2-1 cell-3-1 n-3-1 n-3-2)
+(cell-edge-copy cell-outside-4-up cell-0-4 n-0-4 n-0-5)
+(node-degree0-copy n-0-4)
+(cell-capacity-copy cell-outside-0-up cap-1)
+(node-degree0 n-9-4)
+(cell-capacity cell-0-3 cap-4)
+(cell-capacity-copy cell-8-0 cap-4)
+(cell-edge-copy cell-1-1 cell-2-1 n-2-1 n-2-2)
+(cell-capacity cell-5-0 cap-2)
+(cell-edge-copy cell-4-0 cell-5-0 n-5-0 n-5-1)
+(cell-edge cell-4-1 cell-4-2 n-4-2 n-5-2)
+(cell-edge-copy cell-0-2 cell-1-2 n-1-2 n-1-3)
+(node-degree0 n-8-0)
+(cell-edge cell-0-0 cell-1-0 n-1-0 n-1-1)
+(cell-edge-copy cell-outside-1-left cell-1-0 n-1-0 n-2-0)
+(node-degree0 n-2-2)
+(cell-capacity cell-0-2 cap-4)
+(node-degree0 n-6-0)
+(cell-edge-copy cell-outside-8-left cell-8-0 n-8-0 n-9-0)
+(cell-edge cell-7-3 cell-8-3 n-8-3 n-8-4)
+(cell-edge-copy cell-0-0 cell-0-1 n-0-1 n-1-1)
+(cell-capacity-copy cell-1-3 cap-3)
+(cell-capacity-copy cell-6-1 cap-3)
+(cell-edge-copy cell-2-3 cell-3-3 n-3-3 n-3-4)
+(cell-capacity-copy cell-outside-5-right cap-1)
+(cell-capacity-copy cell-outside-2-right cap-1)
+(cell-edge cell-7-4 cell-8-4 n-8-4 n-8-5)
+(cell-capacity cell-2-1 cap-4)
+(cell-edge cell-6-2 cell-7-2 n-7-2 n-7-3)
+(cell-edge-copy cell-6-0 cell-6-1 n-6-1 n-7-1)
+(cell-edge cell-outside-4-up cell-0-4 n-0-4 n-0-5)
+(cell-edge cell-3-0 cell-3-1 n-3-1 n-4-1)
+(cell-edge cell-4-0 cell-5-0 n-5-0 n-5-1)
+(cell-edge-copy cell-outside-0-up cell-0-0 n-0-0 n-0-1)
+(cell-edge cell-0-2 cell-1-2 n-1-2 n-1-3)
+(cell-edge cell-7-3 cell-7-4 n-7-4 n-8-4)
+(cell-edge cell-outside-8-left cell-8-0 n-8-0 n-9-0)
+(node-degree0-copy n-0-5)
+(cell-capacity-copy cell-0-3 cap-4)
+(cell-capacity-copy cell-5-0 cap-2)
+(cell-edge-copy cell-7-1 cell-8-1 n-8-1 n-8-2)
+(node-degree0 n-8-1)
+(cell-edge-copy cell-3-2 cell-4-2 n-4-2 n-4-3)
+(cell-capacity cell-outside-5-left cap-1)
+(cell-edge-copy cell-8-2 cell-outside-2-down n-9-2 n-9-3)
+(node-degree0 n-5-0)
+(cell-capacity-copy cell-0-2 cap-4)
+(node-degree0-copy n-7-5)
+(unlock-origin-domain )
+(node-degree0 n-0-1)
+(cell-capacity cell-4-4 cap-4)
+(cell-edge-copy cell-1-0 cell-1-1 n-1-1 n-2-1)
+(node-degree0 n-2-4)
+(node-degree0-copy n-6-5)
+(cell-capacity cell-8-1 cap-4)
+(node-degree0 n-3-0)
+(cell-capacity-copy cell-2-1 cap-4)
+(node-degree0 n-8-3)
+(cell-capacity cell-outside-3-up cap-1)
+(cell-edge cell-7-1 cell-8-1 n-8-1 n-8-2)
+(cell-edge cell-3-2 cell-4-2 n-4-2 n-4-3)
+(cell-edge cell-7-2 cell-8-2 n-8-2 n-8-3)
+(cell-edge cell-8-2 cell-outside-2-down n-9-2 n-9-3)
+(cell-capacity cell-3-3 cap-4)
+(cell-capacity cell-7-4 cap-4)
+(cell-edge-copy cell-1-2 cell-2-2 n-2-2 n-2-3)
+(cell-edge cell-5-3 cell-6-3 n-6-3 n-6-4)
+(cell-capacity cell-6-3 cap-4)
+(cell-edge cell-8-3 cell-outside-3-down n-9-3 n-9-4)
+(cell-edge-copy cell-8-4 cell-outside-4-down n-9-4 n-9-5)
+(cell-edge cell-1-0 cell-1-1 n-1-1 n-2-1)
+(cell-edge-copy cell-8-4 cell-outside-8-right n-8-5 n-9-5)
+(node-degree0-copy n-3-5)
+(node-degree0-copy n-0-2)
+(cell-capacity-copy cell-outside-5-left cap-1)
+(cell-edge-copy cell-4-1 cell-5-1 n-5-1 n-5-2)
+(node-degree0 n-8-4)
+(node-degree0-copy n-7-2)
+(cell-edge-copy cell-5-0 cell-5-1 n-5-1 n-6-1)
+(cell-edge-copy cell-7-2 cell-7-3 n-7-3 n-8-3)
+(node-degree0 n-9-3)
+(cell-capacity cell-1-1 cap-4)
+(cell-edge cell-3-0 cell-4-0 n-4-0 n-4-1)
+(cell-edge-copy cell-3-1 cell-4-1 n-4-1 n-4-2)
+(cell-capacity-copy cell-4-4 cap-4)
+(node-degree0-copy n-0-0)
+(cell-edge cell-8-1 cell-outside-1-down n-9-1 n-9-2)
+(cell-capacity-copy cell-8-1 cap-4)
+(cell-capacity cell-7-0 cap-2)
+(cell-capacity-inc cap-0 cap-1)
+(cell-capacity cell-outside-2-up cap-1)
+(node-degree0-copy n-2-1)
+(node-degree0-copy n-5-3)
+(node-degree0 n-7-1)
+(cell-capacity-copy cell-outside-3-up cap-1)
+(cell-capacity cell-outside-6-right cap-1)
+(cell-capacity cell-1-2 cap-4)
+(cell-edge cell-5-0 cell-5-1 n-5-1 n-6-1)
+(cell-capacity-copy cell-7-4 cap-4)
+(cell-capacity-copy cell-3-3 cap-4)
+(node-degree0 n-6-3)
+(cell-edge cell-0-2 cell-0-3 n-0-3 n-1-3)
+(node-degree0 n-5-5)
+(cell-edge-copy cell-3-3 cell-3-4 n-3-4 n-4-4)
+(cell-capacity-inc-copy cap-0 cap-1)
+(cell-capacity cell-7-1 cap-1)
+(cell-edge-copy cell-7-4 cell-outside-7-right n-7-5 n-8-5)
+(cell-capacity-copy cell-6-3 cap-4)
+(node-degree0 n-0-3)
+(cell-edge-copy cell-1-1 cell-1-2 n-1-2 n-2-2)
+(cell-edge-copy cell-3-2 cell-3-3 n-3-3 n-4-3)
+(cell-edge cell-8-0 cell-outside-0-down n-9-0 n-9-1)
+(cell-capacity cell-7-2 cap-4)
+(node-degree0 n-3-4)
+(node-degree0-copy n-1-0)
+(cell-edge-copy cell-2-0 cell-3-0 n-3-0 n-3-1)
+(node-degree0 n-6-2)
+(node-degree0 n-5-2)
+(cell-capacity-copy cell-outside-7-right cap-1)
+(node-degree0-copy n-9-4)
+(cell-edge-copy cell-outside-2-left cell-2-0 n-2-0 n-3-0)
+(cell-capacity-copy cell-1-1 cap-4)
+(node-degree0 n-9-0)
+(cell-capacity cell-outside-0-left cap-1)
+(node-degree0-copy n-3-1)
+(cell-edge cell-1-4 cell-2-4 n-2-4 n-2-5)
+(cell-capacity-copy cell-7-0 cap-2)
+(cell-capacity-copy cell-outside-2-up cap-1)
+(node-degree0-copy n-6-0)
+(cell-capacity cell-5-1 cap-3)
+(cell-edge-copy cell-5-1 cell-5-2 n-5-2 n-6-2)
+(cell-edge cell-1-0 cell-2-0 n-2-0 n-2-1)
+(cell-capacity cell-1-4 cap-4)
+(cell-edge cell-0-3 cell-1-3 n-1-3 n-1-4)
+(cell-edge cell-4-3 cell-5-3 n-5-3 n-5-4)
+(node-degree0 n-9-5)
+(node-degree0-copy n-1-3)
+(cell-edge-copy cell-2-1 cell-3-1 n-3-1 n-3-2)
+(node-degree0 n-1-2)
+(cell-capacity-copy cell-outside-6-right cap-1)
+(cell-capacity-copy cell-1-2 cap-4)
+(cell-capacity cell-6-2 cap-1)
+(cell-edge cell-outside-2-left cell-2-0 n-2-0 n-3-0)
+(cell-capacity-copy cell-7-1 cap-1)
+(node-degree0-copy n-4-1)
+(cell-edge cell-6-3 cell-6-4 n-6-4 n-7-4)
+(node-degree0-copy n-3-3)
+(cell-capacity-copy cell-7-2 cap-4)
+(cell-edge cell-1-4 cell-outside-1-right n-1-5 n-2-5)
+(cell-edge cell-5-1 cell-5-2 n-5-2 n-6-2)
+(cell-capacity cell-outside-4-down cap-1)
+(cell-capacity cell-4-2 cap-4)
+(cell-edge-copy cell-7-4 cell-8-4 n-8-4 n-8-5)
+(cell-edge-copy cell-6-2 cell-7-2 n-7-2 n-7-3)
+(cell-edge cell-outside-4-left cell-4-0 n-4-0 n-5-0)
+(cell-capacity-copy cell-outside-0-left cap-1)
+(node-degree0-copy n-8-1)
+(cell-capacity cell-outside-2-left cap-1)
+(cell-edge cell-6-4 cell-7-4 n-7-4 n-7-5)
+(cell-edge-copy cell-3-0 cell-3-1 n-3-1 n-4-1)
+(cell-edge cell-5-4 cell-6-4 n-6-4 n-6-5)
+(cell-edge-copy cell-7-3 cell-7-4 n-7-4 n-8-4)
+(cell-capacity-copy cell-1-4 cap-4)
+(cell-edge cell-1-3 cell-1-4 n-1-4 n-2-4)
+(node-degree0-copy n-8-2)
+(cell-edge cell-4-3 cell-4-4 n-4-4 n-5-4)
+(node-degree0 n-7-4)
+(cell-capacity-copy cell-6-2 cap-1)
+(node-degree0-copy n-7-3)
+(cell-edge cell-6-2 cell-6-3 n-6-3 n-7-3)
+(node-degree0-copy n-4-3)
+(cell-edge cell-outside-3-left cell-3-0 n-3-0 n-4-0)
+(cell-edge cell-outside-0-left cell-0-0 n-0-0 n-1-0)
+(cell-edge cell-2-4 cell-outside-2-right n-2-5 n-3-5)
+(cell-capacity-copy cell-outside-4-down cap-1)
+(cell-capacity-copy cell-4-2 cap-4)
+(cell-edge-copy cell-5-4 cell-outside-5-right n-5-5 n-6-5)
+(cell-edge-copy cell-5-1 cell-6-1 n-6-1 n-6-2)
+(cell-edge cell-8-0 cell-8-1 n-8-1 n-9-1)
+(cell-capacity cell-0-1 cap-3)
+(cell-edge cell-6-0 cell-7-0 n-7-0 n-7-1)
+(cell-capacity cell-1-0 cap-3)
+(node-degree0 n-2-3)
+(cell-capacity-inc cap-2 cap-3)
+(cell-edge-copy cell-7-2 cell-8-2 n-8-2 n-8-3)
+(node-degree0 n-9-2)
+(node-degree0 n-1-5)
+(cell-edge-copy cell-8-2 cell-8-3 n-8-3 n-9-3)
+(cell-edge-copy cell-0-1 cell-0-2 n-0-2 n-1-2)
+(node-degree0 n-5-1)
+(cell-edge cell-6-4 cell-outside-6-right n-6-5 n-7-5)
+(cell-edge-copy cell-5-3 cell-6-3 n-6-3 n-6-4)
+(cell-edge-copy cell-7-1 cell-7-2 n-7-2 n-8-2)
+(cell-edge-copy cell-8-3 cell-outside-3-down n-9-3 n-9-4)
+(node-degree0 n-1-1)
+(cell-edge-copy cell-2-1 cell-2-2 n-2-2 n-3-2)
+(cell-capacity cell-outside-8-right cap-1)
+(node-degree0-copy n-4-2)
+(cell-capacity-inc-copy cap-2 cap-3)
+(cell-edge cell-5-4 cell-outside-5-right n-5-5 n-6-5)
+(cell-edge cell-5-1 cell-6-1 n-6-1 n-6-2)
+(node-degree0-copy n-9-1)
+(node-degree0 n-5-4)
+(cell-edge-copy cell-3-0 cell-4-0 n-4-0 n-4-1)
+(node-degree0-copy n-2-5)
+(node-degree0-copy n-7-0)
+(cell-edge cell-0-4 cell-outside-0-right n-0-5 n-1-5)
+(node-degree0-copy n-5-5)
+(cell-capacity cell-outside-3-down cap-1)
+(cell-edge cell-5-3 cell-5-4 n-5-4 n-6-4)
+(node-degree0 n-3-2)
+(cell-edge-copy cell-8-1 cell-outside-1-down n-9-1 n-9-2)
+(node-degree0 n-0-4)
+(cell-edge cell-5-0 cell-6-0 n-6-0 n-6-1)
+(cell-edge cell-6-1 cell-7-1 n-7-1 n-7-2)
+(cell-edge cell-8-2 cell-8-3 n-8-3 n-9-3)
+(cell-edge cell-0-1 cell-0-2 n-0-2 n-1-2)
+(cell-edge-copy cell-7-0 cell-8-0 n-8-0 n-8-1)
+(cell-edge-copy cell-8-1 cell-8-2 n-8-2 n-9-2)
+(cell-edge cell-7-1 cell-7-2 n-7-2 n-8-2)
+(cell-capacity cell-2-3 cap-4)
+(cell-edge cell-2-1 cell-2-2 n-2-2 n-3-2)
+(cell-edge cell-0-3 cell-0-4 n-0-4 n-1-4)
+(cell-capacity-copy cell-0-1 cap-3)
+(cell-capacity cell-6-0 cap-4)
+(node-degree0-copy n-6-1)
+(cell-capacity-copy cell-1-0 cap-3)
+(cell-edge-copy cell-5-2 cell-6-2 n-6-2 n-6-3)
+(cell-edge-copy cell-0-2 cell-0-3 n-0-3 n-1-3)
+(node-degree0-copy n-4-4)
+(cell-capacity-copy cell-outside-8-right cap-1)
+(cell-capacity cell-4-3 cap-4)
+(cell-edge-copy cell-8-0 cell-outside-0-down n-9-0 n-9-1)
+(cell-edge cell-7-0 cell-8-0 n-8-0 n-8-1)
+(node-degree0-copy n-6-4)
+(cell-capacity cell-5-3 cap-3)
+(node-degree0-copy n-9-5)
+(cell-edge cell-8-1 cell-8-2 n-8-2 n-9-2)
+(cell-capacity-inc cap-3 cap-4)
+(cell-capacity cell-outside-4-right cap-1)
+(cell-capacity cell-4-1 cap-4)
+(cell-capacity cell-outside-0-right cap-1)
+(cell-capacity-copy cell-outside-3-down cap-1)
+(node-degree0 n-0-5)
+(cell-edge cell-5-2 cell-6-2 n-6-2 n-6-3)
+(cell-edge-copy cell-1-4 cell-2-4 n-2-4 n-2-5)
+(node-degree0-copy n-4-0)
+(cell-edge-copy cell-3-3 cell-4-3 n-4-3 n-4-4)
+(cell-edge-copy cell-1-0 cell-2-0 n-2-0 n-2-1)
+(cell-capacity-copy cell-2-3 cap-4)
+(cell-capacity cell-8-4 cap-4)
+(cell-edge cell-4-4 cell-outside-4-right n-4-5 n-5-5)
+(cell-edge-copy cell-0-3 cell-1-3 n-1-3 n-1-4)
+(cell-capacity cell-5-4 cap-4)
+(cell-edge-copy cell-4-3 cell-5-3 n-5-3 n-5-4)
+(cell-capacity-copy cell-6-0 cap-4)
+(cell-capacity cell-8-3 cap-3)
+(cell-edge-copy cell-2-4 cell-3-4 n-3-4 n-3-5)
+(node-degree0-copy n-2-0)
+(node-degree0 n-7-5)
+(cell-edge cell-4-0 cell-4-1 n-4-1 n-5-1)
+(node-degree0 n-6-5)
+(cell-edge-copy cell-4-4 cell-5-4 n-5-4 n-5-5)
+(cell-capacity-copy cell-4-3 cap-4)
+(cell-edge-copy cell-6-3 cell-6-4 n-6-4 n-7-4)
+(cell-capacity cell-outside-6-left cap-1)
+(node-degree0-copy n-8-0)
+(node-degree0-copy n-2-2)
+(cell-edge-copy cell-1-4 cell-outside-1-right n-1-5 n-2-5)
+(cell-edge-copy cell-4-2 cell-4-3 n-4-3 n-5-3)
+(cell-capacity-copy cell-5-3 cap-3)
+(cell-edge cell-3-3 cell-4-3 n-4-3 n-4-4)
+(cell-capacity-copy cell-outside-4-right cap-1)
+(cell-capacity-copy cell-4-1 cap-4)
+(cell-edge cell-2-4 cell-3-4 n-3-4 n-3-5)
+(cell-capacity-copy cell-outside-0-right cap-1)
+(cell-edge-copy cell-outside-4-left cell-4-0 n-4-0 n-5-0)
+(cell-edge cell-2-0 cell-2-1 n-2-1 n-3-1)
+(cell-edge cell-outside-6-left cell-6-0 n-6-0 n-7-0)
+(cell-edge-copy cell-6-4 cell-7-4 n-7-4 n-7-5)
+(cell-edge-copy cell-5-4 cell-6-4 n-6-4 n-6-5)
+(cell-edge cell-4-2 cell-5-2 n-5-2 n-5-3)
+(node-degree0 n-3-5)
+(node-degree0 n-0-2)
+(cell-capacity-copy cell-8-4 cap-4)
+(cell-edge cell-4-4 cell-5-4 n-5-4 n-5-5)
+(cell-capacity cell-outside-1-right cap-1)
+(cell-edge-copy cell-1-3 cell-1-4 n-1-4 n-2-4)
+(cell-capacity-copy cell-5-4 cap-4)
+(node-degree0 n-7-2)
+(cell-edge cell-3-4 cell-outside-3-right n-3-5 n-4-5)
+(cell-capacity-copy cell-8-3 cap-3)
+(cell-edge cell-3-1 cell-3-2 n-3-2 n-4-2)
+(cell-edge cell-1-3 cell-2-3 n-2-3 n-2-4)
+(cell-capacity cell-outside-0-down cap-1)
+(cell-capacity cell-outside-1-down cap-1)
+(node-degree0 n-8-5)
+(cell-edge cell-4-2 cell-4-3 n-4-3 n-5-3)
+(cell-capacity cell-0-4 cap-3)
+(node-degree0 n-0-0)
+(cell-edge-copy cell-4-3 cell-4-4 n-4-4 n-5-4)
+(cell-edge-copy cell-6-1 cell-6-2 n-6-2 n-7-2)
+(cell-edge cell-5-2 cell-5-3 n-5-3 n-6-3)
+(cell-edge cell-2-2 cell-3-2 n-3-2 n-3-3)
+(node-degree0-copy n-2-3)
+(cell-edge-copy cell-outside-5-left cell-5-0 n-5-0 n-6-0)
+(cell-edge-copy cell-6-2 cell-6-3 n-6-3 n-7-3)
+(node-degree0 n-2-1)
+(node-degree0 n-5-3)
+(cell-edge-copy cell-outside-1-up cell-0-1 n-0-1 n-0-2)
+(cell-capacity-copy cell-outside-6-left cap-1)
+(cell-edge-copy cell-outside-3-left cell-3-0 n-3-0 n-4-0)
+(node-degree0-copy n-5-0)
+(cell-edge-copy cell-outside-0-left cell-0-0 n-0-0 n-1-0)
+(cell-edge-copy cell-2-4 cell-outside-2-right n-2-5 n-3-5)
+(cell-capacity cell-3-4 cap-4)
+(cell-capacity-copy cell-5-1 cap-3)
+(cell-capacity cell-0-0 cap-4)
+(node-degree0-copy n-0-1)
+(cell-edge-copy cell-8-3 cell-8-4 n-8-4 n-9-4)
+(node-degree0-copy n-2-4)
+(node-degree0 n-1-4)
+(node-degree0-copy n-3-0)
+(cell-edge-copy cell-8-0 cell-8-1 n-8-1 n-9-1)
+(cell-edge cell-2-2 cell-2-3 n-2-3 n-3-3)
+(cell-edge-copy cell-6-0 cell-7-0 n-7-0 n-7-1)
+(node-degree0-copy n-8-3)
+(cell-edge cell-6-1 cell-6-2 n-6-2 n-7-2)
+(cell-edge cell-outside-5-left cell-5-0 n-5-0 n-6-0)
+(node-degree0 n-1-0)
+(node-degree0-copy n-3-2)
+(cell-edge-copy cell-6-4 cell-outside-6-right n-6-5 n-7-5)
+(cell-edge cell-7-0 cell-7-1 n-7-1 n-8-1)
+(cell-capacity-copy cell-outside-0-down cap-1)
+(cell-edge cell-outside-1-up cell-0-1 n-0-1 n-0-2)
+(cell-edge cell-2-3 cell-2-4 n-2-4 n-3-4)
+(cell-capacity-copy cell-outside-1-down cap-1)
+(cell-capacity-copy cell-0-4 cap-3)
+(node-degree0 n-3-1)
+(cell-edge cell-8-3 cell-8-4 n-8-4 n-9-4)
+(node-degree0-copy n-8-4)
+(cell-capacity-copy cell-outside-2-left cap-1)
+(node-degree0-copy n-9-3)
+(cell-edge-copy cell-0-4 cell-outside-0-right n-0-5 n-1-5)
+(cell-capacity cell-4-0 cap-4)
+(cell-capacity-copy cell-3-4 cap-4)
+(cell-edge-copy cell-5-3 cell-5-4 n-5-4 n-6-4)
+(cell-capacity-copy cell-0-0 cap-4)
+(cell-capacity cell-outside-2-down cap-1)
+(node-degree0 n-1-3)
+(cell-capacity cell-2-4 cap-2)
+(cell-edge-copy cell-5-0 cell-6-0 n-6-0 n-6-1)
+(cell-edge-copy cell-6-1 cell-7-1 n-7-1 n-7-2)
+(cell-edge-copy cell-outside-7-left cell-7-0 n-7-0 n-8-0)
+(cell-edge-copy cell-0-3 cell-0-4 n-0-4 n-1-4)
+(node-degree0 n-4-5)
+(cell-edge cell-1-1 cell-2-1 n-2-1 n-2-2)
+(node-degree0 n-4-1)
+(node-degree0-copy n-7-1)
+(cell-edge-copy cell-0-4 cell-1-4 n-1-4 n-1-5)
+(cell-edge cell-outside-1-left cell-1-0 n-1-0 n-2-0)
+(node-degree0 n-3-3)
+(cell-capacity cell-7-3 cap-1)
+(cell-edge-copy cell-1-2 cell-1-3 n-1-3 n-2-3)
+(cell-edge cell-0-0 cell-0-1 n-0-1 n-1-1)
+(node-degree0-copy n-6-3)
+(cell-edge cell-2-3 cell-3-3 n-3-3 n-3-4)
+(cell-capacity cell-outside-4-left cap-1)
+(cell-edge cell-6-0 cell-6-1 n-6-1 n-7-1)
+(cell-edge cell-outside-7-left cell-7-0 n-7-0 n-8-0)
+(cell-capacity cell-2-0 cap-3)
+(node-degree0-copy n-0-3)
+(node-degree0-copy n-3-4)
+(node-degree0-copy n-6-2)
+(cell-capacity-copy cell-4-0 cap-4)
+(node-degree0-copy n-5-2)
+(cell-capacity cell-outside-8-left cap-1)
+(cell-capacity cell-5-2 cap-4)
+(cell-edge cell-outside-0-up cell-0-0 n-0-0 n-0-1)
+(node-degree0-copy n-9-0)
+(cell-capacity-copy cell-outside-2-down cap-1)
+(cell-edge cell-0-4 cell-1-4 n-1-4 n-1-5)
+(cell-capacity-copy cell-2-4 cap-2)
+(cell-edge-copy cell-3-4 cell-4-4 n-4-4 n-4-5)
+(cell-edge cell-1-2 cell-1-3 n-1-3 n-2-3)
+(node-degree0 n-8-2)
+(cell-edge-copy cell-4-4 cell-outside-4-right n-4-5 n-5-5)
+(node-degree0 n-7-3)
+(node-degree0 n-4-3)
+(cell-capacity cell-3-0 cap-4)
+(node-degree0-copy n-1-2)
+(cell-capacity-copy cell-7-3 cap-1)
+(cell-capacity cell-3-2 cap-4)
+(cell-edge-copy cell-4-0 cell-4-1 n-4-1 n-5-1)
+(cell-capacity cell-outside-4-up cap-1))                        (:goal (and
+		(not (node-degree1 n-0-0))
+		(not (node-degree1 n-0-1))
+		(not (node-degree1 n-0-2))
+		(not (node-degree1 n-0-3))
+		(not (node-degree1 n-0-4))
+		(not (node-degree1 n-0-5))
+		(not (node-degree1 n-1-0))
+		(not (node-degree1 n-1-1))
+		(not (node-degree1 n-1-2))
+		(not (node-degree1 n-1-3))
+		(not (node-degree1 n-1-4))
+		(not (node-degree1 n-1-5))
+		(not (node-degree1 n-2-0))
+		(not (node-degree1 n-2-1))
+		(not (node-degree1 n-2-2))
+		(not (node-degree1 n-2-3))
+		(not (node-degree1 n-2-4))
+		(not (node-degree1 n-2-5))
+		(not (node-degree1 n-3-0))
+		(not (node-degree1 n-3-1))
+		(not (node-degree1 n-3-2))
+		(not (node-degree1 n-3-3))
+		(not (node-degree1 n-3-4))
+		(not (node-degree1 n-3-5))
+		(not (node-degree1 n-4-0))
+		(not (node-degree1 n-4-1))
+		(not (node-degree1 n-4-2))
+		(not (node-degree1 n-4-3))
+		(not (node-degree1 n-4-4))
+		(not (node-degree1 n-4-5))
+		(not (node-degree1 n-5-0))
+		(not (node-degree1 n-5-1))
+		(not (node-degree1 n-5-2))
+		(not (node-degree1 n-5-3))
+		(not (node-degree1 n-5-4))
+		(not (node-degree1 n-5-5))
+		(not (node-degree1 n-6-0))
+		(not (node-degree1 n-6-1))
+		(not (node-degree1 n-6-2))
+		(not (node-degree1 n-6-3))
+		(not (node-degree1 n-6-4))
+		(not (node-degree1 n-6-5))
+		(not (node-degree1 n-7-0))
+		(not (node-degree1 n-7-1))
+		(not (node-degree1 n-7-2))
+		(not (node-degree1 n-7-3))
+		(not (node-degree1 n-7-4))
+		(not (node-degree1 n-7-5))
+		(not (node-degree1 n-8-0))
+		(not (node-degree1 n-8-1))
+		(not (node-degree1 n-8-2))
+		(not (node-degree1 n-8-3))
+		(not (node-degree1 n-8-4))
+		(not (node-degree1 n-8-5))
+		(not (node-degree1 n-9-0))
+		(not (node-degree1 n-9-1))
+		(not (node-degree1 n-9-2))
+		(not (node-degree1 n-9-3))
+		(not (node-degree1 n-9-4))
+		(not (node-degree1 n-9-5))
+		(cell-capacity cell-0-1 cap-0)
+		(cell-capacity cell-0-4 cap-0)
+		(cell-capacity cell-1-0 cap-0)
+		(cell-capacity cell-1-3 cap-0)
+		(cell-capacity cell-2-0 cap-0)
+		(cell-capacity cell-2-4 cap-0)
+		(cell-capacity cell-5-0 cap-0)
+		(cell-capacity cell-5-1 cap-0)
+		(cell-capacity cell-5-3 cap-0)
+		(cell-capacity cell-6-1 cap-0)
+		(cell-capacity cell-6-2 cap-0)
+		(cell-capacity cell-7-0 cap-0)
+		(cell-capacity cell-7-1 cap-0)
+		(cell-capacity cell-7-3 cap-0)
+		(cell-capacity cell-8-3 cap-0)
+		(invalid )))                        )

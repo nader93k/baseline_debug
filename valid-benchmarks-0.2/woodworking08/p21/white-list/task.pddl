@@ -1,0 +1,105 @@
+(define (problem wood-prob)                       (:domain woodworking)                       (:objects glazer0 - glazer
+immersion-varnisher0 - immersion-varnisher
+blue - acolour
+s3 - aboardsize
+spray-varnisher0 - spray-varnisher
+oak - awood
+s2 - aboardsize
+s4 - aboardsize
+highspeed-saw0 - highspeed-saw
+saw0 - saw
+p2 - part
+s0 - aboardsize
+s1 - aboardsize
+b0 - board
+p0 - part
+grinder0 - grinder
+beech - awood
+red - acolour
+p1 - part
+planer0 - planer)                        (:init (grind-treatment-change glazed untreated)
+(boardsize-successor s1 s2)
+(boardsize-successor-copy s1 s2)
+(unlock-origin-domain )
+(boardsize-successor-copy s3 s4)
+(surface-condition-copy p1 rough)
+(boardsize-successor s3 s4)
+(goalsize-copy p0 small)
+(= (spray-varnish-cost p1) 15)
+(= (plane-cost p1) 30)
+(wood p1 oak)
+(= (plane-cost p2) 30)
+(= (glaze-cost p0) 10)
+(wood b0 oak)
+(= (grind-cost p1) 45)
+(boardsize-successor s2 s3)
+(treatment p1 varnished)
+(= (grind-cost p2) 45)
+(available b0)
+(colour p1 blue)
+(surface-condition p1 rough)
+(boardsize-successor-copy s2 s3)
+(has-colour-copy immersion-varnisher0 natural)
+(boardsize-copy b0 s4)
+(has-colour-copy immersion-varnisher0 red)
+(grind-treatment-change-copy varnished colourfragments)
+(= (plane-cost p0) 10)
+(has-colour spray-varnisher0 natural)
+(available-copy p1)
+(available p1)
+(= (spray-varnish-cost p0) 5)
+(is-smooth-copy smooth)
+(treatment-copy p1 varnished)
+(boardsize b0 s4)
+(grind-treatment-change varnished colourfragments)
+(is-smooth smooth)
+(surface-condition-copy b0 smooth)
+(unused-copy p0)
+(unused-copy p2)
+(= (glaze-cost p1) 20)
+(boardsize-successor s0 s1)
+(has-colour glazer0 red)
+(grind-treatment-change-copy colourfragments untreated)
+(= (spray-varnish-cost p2) 15)
+(goalsize p1 large)
+(unused p2)
+(boardsize-successor-copy s0 s1)
+(has-colour-copy spray-varnisher0 red)
+(goalsize p2 large)
+(surface-condition b0 smooth)
+(is-smooth-copy verysmooth)
+(colour-copy p1 blue)
+(has-colour spray-varnisher0 red)
+(is-smooth verysmooth)
+(= (total-cost ) 0)
+(grind-treatment-change-copy untreated untreated)
+(has-colour-copy glazer0 red)
+(grind-treatment-change colourfragments untreated)
+(has-colour immersion-varnisher0 natural)
+(grind-treatment-change-copy glazed untreated)
+(has-colour-copy spray-varnisher0 natural)
+(goalsize-copy p1 large)
+(goalsize-copy p2 large)
+(has-colour immersion-varnisher0 red)
+(wood-copy b0 oak)
+(empty-copy highspeed-saw0)
+(wood-copy p1 oak)
+(= (grind-cost p0) 15)
+(empty highspeed-saw0)
+(goalsize p0 small)
+(unused p0)
+(available-copy b0)
+(grind-treatment-change untreated untreated)
+(= (glaze-cost p2) 20))                        (:goal (and
+		(available p0)
+		(colour p0 natural)
+		(treatment p0 varnished)
+		(available p1)
+		(wood p1 oak)
+		(surface-condition p1 smooth)
+		(available p2)
+		(colour p2 red)
+		(wood p2 oak)
+		(surface-condition p2 smooth)
+		(treatment p2 varnished)
+		(invalid )))                        (:metric minimize (total-cost) ))

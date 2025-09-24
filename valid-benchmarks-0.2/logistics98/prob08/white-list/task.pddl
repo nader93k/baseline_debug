@@ -1,0 +1,712 @@
+(define (problem strips-log-x-8)                       (:domain logistics-strips)                       (:objects city15-3 - object
+package3 - object
+city19 - object
+city7 - object
+city13-3 - object
+city11-3 - object
+city11-2 - object
+city3 - object
+city15-2 - object
+truck31 - object
+city9-2 - object
+truck23 - object
+package17 - object
+city2-2 - object
+city18-3 - object
+plane2 - object
+truck28 - object
+truck21 - object
+package4 - object
+city12-2 - object
+city10-2 - object
+city6-1 - object
+city14-3 - object
+truck19 - object
+plane3 - object
+city16-1 - object
+package13 - object
+city1-3 - object
+truck25 - object
+truck20 - object
+package7 - object
+package24 - object
+city11 - object
+package19 - object
+package8 - object
+city5 - object
+truck32 - object
+city7-2 - object
+city5-2 - object
+truck13 - object
+truck14 - object
+truck26 - object
+city18 - object
+truck30 - object
+city14-1 - object
+city8 - object
+city7-1 - object
+truck4 - object
+city13 - object
+truck11 - object
+truck10 - object
+city11-1 - object
+city8-3 - object
+city9 - object
+city4 - object
+plane4 - object
+city16-3 - object
+truck24 - object
+city18-2 - object
+city5-3 - object
+city10-3 - object
+truck3 - object
+city7-3 - object
+city15 - object
+city6 - object
+city5-1 - object
+city19-3 - object
+city20-3 - object
+city3-2 - object
+package10 - object
+city17-2 - object
+city17 - object
+package11 - object
+city16-2 - object
+city2-1 - object
+city12-3 - object
+truck29 - object
+truck16 - object
+city8-1 - object
+city3-3 - object
+city13-2 - object
+truck33 - object
+truck15 - object
+city14-2 - object
+city19-2 - object
+city12 - object
+city9-1 - object
+city20 - object
+package14 - object
+city1-2 - object
+city2 - object
+truck17 - object
+package2 - object
+city2-3 - object
+truck18 - object
+city6-3 - object
+truck9 - object
+city9-3 - object
+package12 - object
+truck2 - object
+truck12 - object
+city4-3 - object
+city10-1 - object
+plane1 - object
+city8-2 - object
+package18 - object
+city1-1 - object
+package23 - object
+package1 - object
+city12-1 - object
+package15 - object
+truck27 - object
+package22 - object
+city4-2 - object
+package5 - object
+truck1 - object
+city17-1 - object
+city17-3 - object
+package21 - object
+package9 - object
+city19-1 - object
+city18-1 - object
+truck22 - object
+package20 - object
+city10 - object
+city6-2 - object
+truck5 - object
+city16 - object
+city4-1 - object
+city1 - object
+city20-2 - object
+truck6 - object
+city20-1 - object
+truck8 - object
+package6 - object
+truck7 - object
+city14 - object
+city15-1 - object
+package16 - object
+city13-1 - object
+city3-1 - object)                        (:init (location city14-1)
+(obj package14)
+(in-city city16-3 city16)
+(in-city-copy city15-2 city15)
+(in-city city20-3 city20)
+(truck-copy truck32)
+(obj package9)
+(in-city city1-2 city1)
+(city city7)
+(location-copy city15-2)
+(location-copy city12-2)
+(city-copy city17)
+(airport-copy city18-3)
+(at-copy truck13 city1-3)
+(location-copy city12-3)
+(location city7-1)
+(at-copy package20 city20-2)
+(in-city city17-3 city17)
+(location city15-3)
+(location city17-2)
+(location-copy city20-3)
+(at-copy truck10 city20-3)
+(in-city city14-2 city14)
+(at package10 city7-1)
+(obj-copy package22)
+(truck truck20)
+(airport city15-3)
+(airplane-copy plane2)
+(location-copy city6-2)
+(city city13)
+(at-copy truck28 city15-2)
+(obj-copy package8)
+(at truck3 city8-2)
+(at truck15 city2-2)
+(at package24 city13-1)
+(at truck2 city2-1)
+(in-city city15-3 city15)
+(at truck16 city3-2)
+(at-copy truck12 city12-1)
+(at-copy package3 city1-1)
+(at truck9 city4-1)
+(city-copy city6)
+(airport-copy city1-3)
+(airport-copy city20-3)
+(location city19-1)
+(location-copy city15-1)
+(at package8 city11-3)
+(obj package5)
+(at package5 city7-3)
+(at-copy package23 city13-3)
+(truck-copy truck27)
+(in-city-copy city7-1 city7)
+(obj package19)
+(at package18 city16-1)
+(in-city-copy city3-3 city3)
+(truck-copy truck7)
+(in-city city10-2 city10)
+(at truck11 city5-3)
+(at plane4 city7-3)
+(in-city-copy city1-1 city1)
+(obj-copy package7)
+(truck-copy truck29)
+(location-copy city6-3)
+(location city5-3)
+(in-city-copy city15-1 city15)
+(at-copy package19 city3-3)
+(in-city city11-3 city11)
+(at-copy package21 city20-3)
+(in-city city8-3 city8)
+(airport city5-3)
+(location-copy city7-3)
+(airport-copy city14-3)
+(location-copy city4-1)
+(at truck30 city17-2)
+(in-city-copy city11-1 city11)
+(in-city-copy city12-3 city12)
+(truck truck6)
+(obj package10)
+(location city3-3)
+(obj-copy package13)
+(obj package6)
+(airport-copy city7-3)
+(at-copy plane3 city2-3)
+(in-city-copy city14-3 city14)
+(truck truck2)
+(truck-copy truck26)
+(in-city city8-2 city8)
+(truck-copy truck13)
+(airport city3-3)
+(location-copy city9-2)
+(at truck22 city9-1)
+(in-city-copy city1-3 city1)
+(in-city-copy city13-1 city13)
+(obj package17)
+(location-copy city14-2)
+(in-city-copy city20-2 city20)
+(in-city city17-1 city17)
+(at-copy package16 city13-1)
+(at-copy truck19 city6-2)
+(location city9-1)
+(at-copy truck3 city8-2)
+(in-city city7-2 city7)
+(location-copy city9-3)
+(in-city-copy city19-1 city19)
+(in-city city12-1 city12)
+(in-city-copy city19-2 city19)
+(location city18-1)
+(truck truck26)
+(truck truck13)
+(location city11-3)
+(in-city city5-1 city5)
+(city-copy city19)
+(in-city-copy city5-2 city5)
+(at truck25 city12-2)
+(airplane plane2)
+(airport city11-3)
+(airport-copy city9-3)
+(in-city city13-2 city13)
+(at-copy truck6 city1-1)
+(in-city-copy city5-3 city5)
+(location-copy city10-1)
+(truck-copy truck28)
+(in-city-copy city11-2 city11)
+(at package6 city4-2)
+(obj package20)
+(at package2 city20-3)
+(city city4)
+(in-city city6-2 city6)
+(in-city city6-3 city6)
+(in-city city4-2 city4)
+(at-copy package14 city13-1)
+(at truck26 city13-1)
+(at-copy package9 city11-3)
+(truck-copy truck4)
+(truck-copy truck9)
+(city-copy city8)
+(in-city-copy city10-1 city10)
+(in-city city8-1 city8)
+(in-city city3-1 city3)
+(in-city city6-1 city6)
+(at truck13 city1-3)
+(at package20 city20-2)
+(in-city-copy city16-3 city16)
+(in-city-copy city20-3 city20)
+(in-city-copy city1-2 city1)
+(location city10-3)
+(truck truck28)
+(in-city city4-3 city4)
+(at truck10 city20-3)
+(location-copy city20-1)
+(airport city10-3)
+(truck truck4)
+(in-city-copy city17-3 city17)
+(truck-copy truck25)
+(in-city city3-2 city3)
+(truck-copy truck3)
+(at truck28 city15-2)
+(location city20-2)
+(unlock-origin-domain )
+(location-copy city6-1)
+(at truck12 city12-1)
+(location city13-2)
+(obj-copy package23)
+(in-city-copy city14-2 city14)
+(location-copy city8-1)
+(at package3 city1-1)
+(location city1-1)
+(location-copy city2-3)
+(obj-copy package11)
+(city-copy city18)
+(at package23 city13-3)
+(in-city-copy city15-3 city15)
+(in-city city9-2 city9)
+(in-city city10-3 city10)
+(at-copy package22 city15-3)
+(airport-copy city2-3)
+(obj package16)
+(location city17-1)
+(in-city-copy city10-2 city10)
+(at package19 city3-3)
+(at package21 city20-3)
+(location city17-3)
+(location city19-3)
+(location city2-2)
+(truck truck30)
+(truck-copy truck23)
+(at-copy truck21 city8-1)
+(airport city18-3)
+(airport city17-3)
+(airport city19-3)
+(city-copy city2)
+(in-city-copy city11-3 city11)
+(in-city-copy city8-3 city8)
+(city city10)
+(location-copy city7-2)
+(in-city city16-2 city16)
+(at-copy plane1 city5-3)
+(city-copy city1)
+(location-copy city13-3)
+(location city12-3)
+(city-copy city12)
+(location city3-2)
+(truck-copy truck15)
+(obj package15)
+(at plane3 city2-3)
+(at-copy truck32 city19-1)
+(in-city-copy city14-1 city14)
+(location city13-1)
+(in-city city9-1 city9)
+(location-copy city1-3)
+(truck-copy truck24)
+(airport city12-3)
+(in-city city18-1 city18)
+(location-copy city4-3)
+(in-city city4-1 city4)
+(truck-copy truck14)
+(city-copy city3)
+(in-city city17-2 city17)
+(airport-copy city13-3)
+(in-city-copy city8-2 city8)
+(at package16 city13-1)
+(location city6-2)
+(obj package12)
+(at truck19 city6-2)
+(truck truck32)
+(location city8-3)
+(in-city city18-3 city18)
+(location-copy city14-1)
+(truck truck15)
+(airport-copy city4-3)
+(in-city-copy city17-1 city17)
+(airport city8-3)
+(obj package21)
+(location city15-1)
+(in-city-copy city7-2 city7)
+(truck-copy truck5)
+(in-city-copy city12-1 city12)
+(obj-copy package24)
+(location-copy city7-1)
+(at truck6 city1-1)
+(location-copy city14-3)
+(in-city-copy city5-1 city5)
+(obj package18)
+(location city12-1)
+(in-city city9-3 city9)
+(location-copy city17-2)
+(truck-copy truck12)
+(location city6-3)
+(at package14 city13-1)
+(at package9 city11-3)
+(in-city-copy city13-2 city13)
+(location-copy city11-2)
+(location city1-2)
+(truck-copy truck18)
+(in-city-copy city6-2 city6)
+(airport city6-3)
+(at plane2 city16-3)
+(in-city-copy city6-3 city6)
+(in-city-copy city4-2 city4)
+(truck-copy truck17)
+(at-copy package7 city3-3)
+(in-city city12-2 city12)
+(truck truck27)
+(at package12 city7-2)
+(airport-copy city15-3)
+(location-copy city19-1)
+(city city15)
+(location city16-1)
+(location city18-2)
+(truck truck7)
+(in-city-copy city8-1 city8)
+(in-city-copy city3-1 city3)
+(in-city-copy city6-1 city6)
+(truck truck29)
+(truck truck12)
+(airplane plane1)
+(location city4-2)
+(location city3-1)
+(obj-copy package1)
+(at-copy truck29 city16-2)
+(truck truck18)
+(in-city-copy city4-3 city4)
+(at-copy truck1 city17-2)
+(city city9)
+(location-copy city5-3)
+(obj-copy package9)
+(location city10-2)
+(city city5)
+(in-city-copy city3-2 city3)
+(location city9-3)
+(in-city city13-3 city13)
+(at-copy package13 city14-1)
+(airport city9-3)
+(airport-copy city5-3)
+(at package22 city15-3)
+(city-copy city7)
+(obj package11)
+(in-city-copy city9-2 city9)
+(location-copy city16-2)
+(truck-copy truck31)
+(location-copy city3-3)
+(location-copy city8-2)
+(at-copy truck14 city1-1)
+(in-city-copy city10-3 city10)
+(location city5-1)
+(at truck21 city8-1)
+(at-copy truck20 city7-2)
+(airport-copy city3-3)
+(location city5-2)
+(obj-copy package19)
+(at-copy package15 city18-2)
+(city-copy city13)
+(at-copy plane2 city16-3)
+(at-copy truck5 city5-3)
+(location-copy city11-1)
+(city city17)
+(at plane1 city5-3)
+(at-copy package12 city7-2)
+(at truck32 city19-1)
+(obj package3)
+(location-copy city18-1)
+(truck-copy truck8)
+(location-copy city11-3)
+(truck-copy truck19)
+(in-city-copy city16-2 city16)
+(in-city city2-3 city2)
+(truck truck9)
+(in-city-copy city9-1 city9)
+(in-city-copy city18-1 city18)
+(in-city city7-3 city7)
+(in-city-copy city4-1 city4)
+(truck-copy truck33)
+(location city8-1)
+(city city6)
+(in-city-copy city17-2 city17)
+(airport-copy city11-3)
+(at-copy truck24 city11-2)
+(city city11)
+(obj-copy package10)
+(in-city-copy city18-3 city18)
+(location-copy city2-1)
+(obj package22)
+(city city16)
+(location city16-3)
+(truck truck19)
+(obj package8)
+(truck truck25)
+(airport city16-3)
+(city city14)
+(truck-copy truck1)
+(at package11 city18-3)
+(location-copy city10-3)
+(truck-copy truck10)
+(truck truck3)
+(obj-copy package17)
+(obj package24)
+(location city18-3)
+(in-city city19-3 city19)
+(in-city-copy city9-3 city9)
+(in-city city20-1 city20)
+(at-copy truck33 city20-1)
+(at package7 city3-3)
+(airport-copy city10-3)
+(location-copy city1-1)
+(obj package7)
+(city city20)
+(location city7-2)
+(truck truck1)
+(location city15-2)
+(truck truck10)
+(location-copy city19-2)
+(location city12-2)
+(in-city-copy city12-2 city12)
+(obj-copy package4)
+(location city1-3)
+(at truck29 city16-2)
+(at-copy truck7 city4-2)
+(in-city city2-2 city2)
+(location city20-3)
+(at-copy package17 city5-2)
+(at truck1 city17-2)
+(truck truck23)
+(airplane-copy plane3)
+(airport city1-3)
+(location-copy city17-1)
+(at-copy package4 city5-2)
+(airport city20-3)
+(obj package13)
+(at-copy package1 city13-1)
+(obj package1)
+(location-copy city19-3)
+(at-copy truck18 city5-1)
+(at-copy truck23 city10-2)
+(city-copy city4)
+(at-copy truck17 city4-1)
+(truck-copy truck20)
+(at package13 city14-1)
+(truck truck24)
+(city city19)
+(in-city city2-1 city2)
+(truck-copy truck16)
+(at-copy truck31 city18-2)
+(location-copy city3-2)
+(airport-copy city17-3)
+(truck truck14)
+(airport-copy city19-3)
+(in-city-copy city13-3 city13)
+(at truck14 city1-1)
+(location city14-3)
+(location-copy city13-1)
+(obj-copy package2)
+(at-copy package11 city18-3)
+(at-copy truck27 city14-1)
+(location-copy city15-3)
+(truck-copy truck21)
+(in-city city16-1 city16)
+(airport city14-3)
+(at truck20 city7-2)
+(city city8)
+(location city11-2)
+(at truck4 city17-2)
+(airport-copy city12-3)
+(at package15 city18-2)
+(location city7-3)
+(location-copy city8-3)
+(truck truck16)
+(location city4-1)
+(at truck5 city5-3)
+(at-copy truck8 city10-3)
+(in-city city18-2 city18)
+(truck truck5)
+(city-copy city11)
+(airport city7-3)
+(obj-copy package16)
+(airplane-copy plane4)
+(city-copy city16)
+(truck-copy truck11)
+(truck truck21)
+(airport-copy city8-3)
+(city-copy city14)
+(truck-copy truck6)
+(location city9-2)
+(location-copy city12-1)
+(truck truck17)
+(obj-copy package14)
+(location city14-2)
+(in-city-copy city2-3 city2)
+(truck-copy truck2)
+(at truck24 city11-2)
+(location-copy city1-2)
+(in-city city15-2 city15)
+(in-city-copy city7-3 city7)
+(city city18)
+(obj-copy package15)
+(truck truck11)
+(obj package23)
+(in-city city14-1 city14)
+(airport-copy city6-3)
+(city-copy city20)
+(airplane plane3)
+(city-copy city10)
+(location-copy city16-1)
+(location-copy city18-2)
+(location city16-2)
+(location city8-2)
+(obj-copy package12)
+(location-copy city4-2)
+(location-copy city3-1)
+(location city10-1)
+(at truck33 city20-1)
+(obj-copy package21)
+(at-copy package10 city7-1)
+(at-copy truck4 city17-2)
+(city city2)
+(location-copy city10-2)
+(obj-copy package5)
+(in-city-copy city19-3 city19)
+(in-city-copy city20-1 city20)
+(location-copy city9-1)
+(location city11-1)
+(at-copy truck15 city2-2)
+(city city1)
+(at-copy truck2 city2-1)
+(city city12)
+(at-copy truck16 city3-2)
+(at-copy package24 city13-1)
+(at-copy truck9 city4-1)
+(in-city city7-1 city7)
+(truck truck31)
+(obj-copy package18)
+(in-city city3-3 city3)
+(at truck7 city4-2)
+(at-copy package8 city11-3)
+(at-copy package5 city7-3)
+(at package17 city5-2)
+(in-city city1-1 city1)
+(city city3)
+(location city20-1)
+(at-copy package18 city16-1)
+(in-city city15-1 city15)
+(at package4 city5-2)
+(at package1 city13-1)
+(obj package4)
+(in-city-copy city2-2 city2)
+(location city6-1)
+(at truck18 city5-1)
+(at truck23 city10-2)
+(at-copy plane4 city7-3)
+(at-copy truck11 city5-3)
+(location-copy city5-1)
+(at truck17 city4-1)
+(airplane plane4)
+(location city2-3)
+(in-city city11-1 city11)
+(location city2-1)
+(in-city city12-3 city12)
+(location-copy city5-2)
+(truck truck8)
+(obj-copy package6)
+(airport city2-3)
+(at truck31 city18-2)
+(at-copy truck30 city17-2)
+(in-city city14-3 city14)
+(city-copy city15)
+(at truck27 city14-1)
+(in-city-copy city2-1 city2)
+(truck truck33)
+(in-city city13-1 city13)
+(in-city city1-3 city1)
+(in-city city20-2 city20)
+(at-copy truck22 city9-1)
+(location-copy city20-2)
+(obj package2)
+(in-city-copy city16-1 city16)
+(at truck8 city10-3)
+(location-copy city13-2)
+(city-copy city9)
+(in-city city19-1 city19)
+(in-city city19-2 city19)
+(city-copy city5)
+(truck-copy truck30)
+(location city19-2)
+(location-copy city16-3)
+(location city13-3)
+(truck-copy truck22)
+(in-city-copy city18-2 city18)
+(in-city city5-2 city5)
+(obj-copy package20)
+(airport city13-3)
+(in-city city5-3 city5)
+(in-city city11-2 city11)
+(location city4-3)
+(at-copy truck25 city12-2)
+(airport-copy city16-3)
+(airplane-copy plane1)
+(airport city4-3)
+(at-copy package6 city4-2)
+(at-copy package2 city20-3)
+(location-copy city18-3)
+(location-copy city17-3)
+(location-copy city2-2)
+(in-city city10-1 city10)
+(truck truck22)
+(at-copy truck26 city13-1)
+(obj-copy package3))                        (:goal (and
+		(at package24 city7-1)
+		(at package23 city2-1)
+		(at package22 city1-3)
+		(at package21 city6-3)
+		(at package20 city7-1)
+		(at package19 city1-2)
+		(invalid )))                        )

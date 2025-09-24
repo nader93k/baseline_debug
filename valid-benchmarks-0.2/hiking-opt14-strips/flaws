@@ -1,0 +1,4 @@
+put_down,at_person,effNeg,1
+put_up,up,effNeg,1
+drive_passenger,next,effPos,1
+walk_together,walked,effNeg,-1

@@ -1,0 +1,12 @@
+grasp-cart-right,gripper-obstacle,effNeg,1
+base-cart-up,surface,precNeg,1
+put-on-cart,pushing,precNeg,1
+gripper-right,leftof,precPos,1
+base-down,base-obstacle,effPos,-1
+grasp-cart-above,base-pos,effNeg,1
+grasp-cart-right,cart-pos,effPos,1
+grasp-cart-left,surface,effPos,1
+put-left,sum-x,effPos,1
+put-up,object-goal,effPos,1
+gripper-right,gripper-rel,effNeg,-1
+grasp-cart-above,not-pushed,effNeg,-1

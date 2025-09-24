@@ -1,0 +1,142 @@
+(define (problem wood-prob)                       (:domain woodworking)                       (:objects white - acolour
+glazer0 - glazer
+immersion-varnisher0 - immersion-varnisher
+p3 - part
+s3 - aboardsize
+spray-varnisher0 - spray-varnisher
+s2 - aboardsize
+b1 - board
+s4 - aboardsize
+s6 - aboardsize
+s5 - aboardsize
+highspeed-saw0 - highspeed-saw
+saw0 - saw
+p2 - part
+s0 - aboardsize
+s1 - aboardsize
+b0 - board
+teak - awood
+p0 - part
+grinder0 - grinder
+red - acolour
+p4 - part
+p1 - part
+mauve - acolour
+green - acolour
+planer0 - planer
+mahogany - awood)                        (:init (grind-treatment-change glazed untreated)
+(boardsize b1 s6)
+(unlock-origin-domain )
+(surface-condition-copy b0 rough)
+(= (glaze-cost p1) 15)
+(surface-condition b1 smooth)
+(available b0)
+(boardsize-successor-copy s2 s3)
+(goalsize-copy p0 medium)
+(unused-copy p3)
+(= (spray-varnish-cost p0) 10)
+(has-colour-copy spray-varnisher0 green)
+(goalsize p2 small)
+(boardsize-successor s5 s6)
+(available b1)
+(available-copy b1)
+(has-colour-copy immersion-varnisher0 mauve)
+(is-smooth-copy smooth)
+(goalsize p3 medium)
+(grind-treatment-change varnished colourfragments)
+(= (spray-varnish-cost p4) 15)
+(is-smooth smooth)
+(unused-copy p0)
+(goalsize-copy p2 small)
+(unused p4)
+(boardsize-successor-copy s0 s1)
+(goalsize-copy p3 medium)
+(has-colour glazer0 mauve)
+(goalsize p4 large)
+(grind-treatment-change colourfragments untreated)
+(grind-treatment-change-copy glazed untreated)
+(= (grind-cost p4) 45)
+(empty-copy highspeed-saw0)
+(goalsize-copy p4 large)
+(= (plane-cost p0) 20)
+(wood b1 mahogany)
+(surface-condition-copy b1 smooth)
+(unused p2)
+(boardsize-successor-copy s3 s4)
+(boardsize-successor-copy s1 s2)
+(unused p1)
+(boardsize-successor s2 s3)
+(= (glaze-cost p3) 15)
+(= (plane-cost p4) 30)
+(boardsize-copy b0 s6)
+(boardsize b0 s6)
+(boardsize-successor s0 s1)
+(grind-treatment-change-copy colourfragments untreated)
+(= (spray-varnish-cost p2) 5)
+(= (grind-cost p3) 30)
+(unused p3)
+(= (plane-cost p3) 20)
+(has-colour glazer0 white)
+(= (grind-cost p2) 15)
+(unused p0)
+(boardsize-successor-copy s4 s5)
+(boardsize-successor s3 s4)
+(= (total-cost ) 0)
+(boardsize-successor s1 s2)
+(goalsize p1 medium)
+(has-colour-copy glazer0 mauve)
+(has-colour immersion-varnisher0 green)
+(goalsize-copy p1 medium)
+(grind-treatment-change-copy varnished colourfragments)
+(unused-copy p2)
+(has-colour spray-varnisher0 mauve)
+(is-smooth-copy verysmooth)
+(is-smooth verysmooth)
+(has-colour spray-varnisher0 green)
+(empty highspeed-saw0)
+(boardsize-successor s4 s5)
+(grind-treatment-change untreated untreated)
+(= (glaze-cost p4) 20)
+(has-colour immersion-varnisher0 mauve)
+(goalsize p0 medium)
+(= (grind-cost p1) 30)
+(unused-copy p4)
+(= (plane-cost p2) 10)
+(available-copy b0)
+(= (plane-cost p1) 20)
+(has-colour-copy glazer0 white)
+(surface-condition b0 rough)
+(wood-copy b0 teak)
+(boardsize-successor-copy s5 s6)
+(= (grind-cost p0) 30)
+(= (spray-varnish-cost p1) 10)
+(wood-copy b1 mahogany)
+(= (glaze-cost p0) 15)
+(unused-copy p1)
+(= (glaze-cost p2) 10)
+(wood b0 teak)
+(has-colour-copy immersion-varnisher0 green)
+(grind-treatment-change-copy untreated untreated)
+(boardsize-copy b1 s6)
+(= (spray-varnish-cost p3) 10)
+(has-colour-copy spray-varnisher0 mauve))                        (:goal (and
+		(available p0)
+		(colour p0 mauve)
+		(surface-condition p0 smooth)
+		(available p1)
+		(colour p1 green)
+		(wood p1 mahogany)
+		(surface-condition p1 verysmooth)
+		(treatment p1 varnished)
+		(available p2)
+		(colour p2 mauve)
+		(treatment p2 glazed)
+		(available p3)
+		(colour p3 white)
+		(wood p3 mahogany)
+		(surface-condition p3 smooth)
+		(treatment p3 glazed)
+		(available p4)
+		(wood p4 teak)
+		(treatment p4 varnished)
+		(invalid )))                        (:metric minimize (total-cost) ))

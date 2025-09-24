@@ -1,0 +1,4 @@
+drive-truck,location,effNeg,1
+unload-truck,obj,effNeg,1
+unload-airplane,in,effNeg,-1
+load-airplane,at,precPos,-1

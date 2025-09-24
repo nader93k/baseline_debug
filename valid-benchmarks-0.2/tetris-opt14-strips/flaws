@@ -1,0 +1,4 @@
+move_l_up,at_right_l,precNeg,1
+move_l_left,clear,effPos,-1
+move_square,connected,effPos,1
+move_l_left,at_right_l,effNeg,-1

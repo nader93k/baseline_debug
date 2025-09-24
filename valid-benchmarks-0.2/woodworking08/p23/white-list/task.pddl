@@ -1,0 +1,138 @@
+(define (problem wood-prob)                       (:domain woodworking)                       (:objects white - acolour
+glazer0 - glazer
+immersion-varnisher0 - immersion-varnisher
+p3 - part
+s3 - aboardsize
+spray-varnisher0 - spray-varnisher
+s2 - aboardsize
+b1 - board
+s4 - aboardsize
+s5 - aboardsize
+highspeed-saw0 - highspeed-saw
+saw0 - saw
+p2 - part
+s0 - aboardsize
+s1 - aboardsize
+b0 - board
+teak - awood
+p0 - part
+grinder0 - grinder
+black - acolour
+red - acolour
+p4 - part
+p1 - part
+green - acolour
+planer0 - planer
+mahogany - awood)                        (:init (goalsize p1 small)
+(grind-treatment-change glazed untreated)
+(unlock-origin-domain )
+(treatment p2 colourfragments)
+(= (spray-varnish-cost p1) 5)
+(surface-condition-copy b0 rough)
+(= (glaze-cost p2) 10)
+(goalsize-copy p1 small)
+(available b0)
+(treatment-copy p2 colourfragments)
+(boardsize-successor-copy s2 s3)
+(goalsize-copy p0 medium)
+(unused-copy p3)
+(= (plane-cost p4) 20)
+(has-colour-copy spray-varnisher0 green)
+(= (spray-varnish-cost p3) 15)
+(goalsize p2 small)
+(available b1)
+(= (plane-cost p1) 10)
+(available-copy b1)
+(is-smooth-copy smooth)
+(grind-treatment-change varnished colourfragments)
+(is-smooth smooth)
+(unused-copy p0)
+(goalsize-copy p2 small)
+(= (spray-varnish-cost p0) 10)
+(unused p4)
+(boardsize-successor-copy s0 s1)
+(surface-condition-copy b1 rough)
+(= (plane-cost p2) 10)
+(= (grind-cost p3) 45)
+(boardsize b0 s3)
+(grind-treatment-change colourfragments untreated)
+(grind-treatment-change-copy glazed untreated)
+(empty-copy highspeed-saw0)
+(boardsize-copy b1 s5)
+(wood b1 mahogany)
+(boardsize-successor-copy s3 s4)
+(boardsize-successor-copy s1 s2)
+(unused p1)
+(boardsize b1 s5)
+(= (grind-cost p0) 30)
+(has-colour-copy glazer0 green)
+(boardsize-successor s2 s3)
+(available p2)
+(surface-condition p2 rough)
+(available-copy p2)
+(boardsize-successor s0 s1)
+(grind-treatment-change-copy colourfragments untreated)
+(unused p3)
+(= (spray-varnish-cost p4) 10)
+(= (glaze-cost p1) 10)
+(unused p0)
+(boardsize-successor-copy s4 s5)
+(boardsize-successor s3 s4)
+(boardsize-successor s1 s2)
+(wood-copy p2 mahogany)
+(surface-condition-copy p2 rough)
+(has-colour immersion-varnisher0 green)
+(grind-treatment-change-copy varnished colourfragments)
+(= (grind-cost p1) 15)
+(= (plane-cost p3) 30)
+(wood p2 mahogany)
+(colour p2 black)
+(= (glaze-cost p4) 15)
+(is-smooth-copy verysmooth)
+(= (spray-varnish-cost p2) 5)
+(= (total-cost ) 0)
+(is-smooth verysmooth)
+(= (grind-cost p4) 30)
+(has-colour spray-varnisher0 green)
+(empty highspeed-saw0)
+(boardsize-successor s4 s5)
+(grind-treatment-change untreated untreated)
+(goalsize p0 medium)
+(unused-copy p4)
+(= (plane-cost p0) 20)
+(available-copy b0)
+(goalsize p4 medium)
+(surface-condition b0 rough)
+(wood-copy b0 teak)
+(goalsize-copy p4 medium)
+(= (grind-cost p2) 15)
+(= (glaze-cost p0) 15)
+(boardsize-copy b0 s3)
+(= (glaze-cost p3) 20)
+(wood-copy b1 mahogany)
+(goalsize p3 large)
+(unused-copy p1)
+(wood b0 teak)
+(has-colour-copy immersion-varnisher0 green)
+(has-colour glazer0 green)
+(grind-treatment-change-copy untreated untreated)
+(surface-condition b1 rough)
+(goalsize-copy p3 large)
+(colour-copy p2 black))                        (:goal (and
+		(available p0)
+		(surface-condition p0 smooth)
+		(treatment p0 varnished)
+		(available p1)
+		(wood p1 teak)
+		(surface-condition p1 smooth)
+		(treatment p1 varnished)
+		(available p2)
+		(colour p2 green)
+		(surface-condition p2 smooth)
+		(available p3)
+		(wood p3 mahogany)
+		(surface-condition p3 smooth)
+		(available p4)
+		(wood p4 teak)
+		(treatment p4 glazed)
+		(invalid )))                        (:metric minimize (total-cost) ))

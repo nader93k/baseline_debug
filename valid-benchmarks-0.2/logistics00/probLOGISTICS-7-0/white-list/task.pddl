@@ -1,0 +1,118 @@
+(define (problem logistics-7-0)                       (:domain logistics)                       (:objects obj12 - object
+obj33 - object
+cit2 - object
+tru1 - object
+pos3 - object
+apt2 - object
+cit3 - object
+apn1 - object
+pos1 - object
+obj21 - object
+obj22 - object
+obj32 - object
+obj11 - object
+apt1 - object
+tru3 - object
+apt3 - object
+obj23 - object
+pos2 - object
+obj31 - object
+tru2 - object
+obj13 - object
+cit1 - object)                        (:init (package obj13)
+(city-copy cit1)
+(unlock-origin-domain )
+(truck tru2)
+(location apt2)
+(package-copy obj33)
+(at tru1 pos1)
+(in-city-copy pos2 cit2)
+(package-copy obj11)
+(at-copy obj22 pos2)
+(city cit1)
+(in-city-copy pos3 cit3)
+(in-city apt2 cit2)
+(at-copy tru2 pos2)
+(at obj12 pos1)
+(at obj33 pos3)
+(airport apt3)
+(package obj22)
+(location-copy pos2)
+(at obj11 pos1)
+(location-copy apt1)
+(package-copy obj32)
+(at obj21 pos2)
+(in-city pos2 cit2)
+(at obj23 pos2)
+(in-city pos3 cit3)
+(city-copy cit3)
+(at-copy tru1 pos1)
+(package obj31)
+(location-copy pos3)
+(airport-copy apt1)
+(at obj13 pos1)
+(city cit3)
+(at-copy obj12 pos1)
+(at-copy obj33 pos3)
+(airplane-copy apn1)
+(at apn1 apt1)
+(package-copy obj12)
+(location-copy pos1)
+(package-copy obj21)
+(location apt3)
+(package-copy obj13)
+(truck tru3)
+(at-copy obj21 pos2)
+(at-copy obj23 pos2)
+(package obj23)
+(truck-copy tru1)
+(city-copy cit2)
+(at obj32 pos3)
+(package obj33)
+(at-copy obj13 pos1)
+(city cit2)
+(package-copy obj22)
+(at-copy apn1 apt1)
+(at obj31 pos3)
+(location-copy apt2)
+(in-city-copy pos1 cit1)
+(package obj32)
+(at-copy obj11 pos1)
+(at-copy obj32 pos3)
+(airport-copy apt2)
+(in-city pos1 cit1)
+(location pos2)
+(in-city-copy apt1 cit1)
+(at-copy obj31 pos3)
+(location apt1)
+(package obj11)
+(package-copy obj23)
+(airport apt1)
+(location pos3)
+(in-city apt1 cit1)
+(at tru3 pos3)
+(truck tru1)
+(airport apt2)
+(location-copy apt3)
+(location pos1)
+(in-city-copy apt3 cit3)
+(package-copy obj31)
+(truck-copy tru2)
+(airplane apn1)
+(at obj22 pos2)
+(at tru2 pos2)
+(airport-copy apt3)
+(truck-copy tru3)
+(package obj12)
+(in-city apt3 cit3)
+(package obj21)
+(in-city-copy apt2 cit2)
+(at-copy tru3 pos3))                        (:goal (and
+		(at obj22 pos2)
+		(at obj33 apt1)
+		(at obj12 pos2)
+		(at obj13 apt3)
+		(at obj31 apt2)
+		(at obj23 apt1)
+		(at obj32 pos1)
+		(invalid )))                        )

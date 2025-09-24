@@ -1,0 +1,80 @@
+(define (problem logistics-4-0)                       (:domain logistics)                       (:objects obj21 - object
+obj22 - object
+obj12 - object
+obj11 - object
+cit2 - object
+apt1 - object
+tru1 - object
+obj23 - object
+pos2 - object
+apt2 - object
+obj13 - object
+tru2 - object
+cit1 - object
+apn1 - object
+pos1 - object)                        (:init (package obj13)
+(city-copy cit1)
+(location-copy apt2)
+(airport-copy apt1)
+(unlock-origin-domain )
+(truck tru2)
+(location apt2)
+(at obj13 pos1)
+(at-copy obj12 pos1)
+(in-city apt1 cit1)
+(at tru1 pos1)
+(in-city-copy pos1 cit1)
+(airplane-copy apn1)
+(truck tru1)
+(airport apt2)
+(in-city-copy pos2 cit2)
+(package-copy obj12)
+(location-copy pos1)
+(package-copy obj11)
+(package-copy obj21)
+(at-copy obj22 pos2)
+(city cit1)
+(location pos1)
+(at-copy apn1 apt2)
+(in-city apt2 cit2)
+(at-copy tru2 pos2)
+(package-copy obj13)
+(at-copy obj11 pos1)
+(at obj12 pos1)
+(airport-copy apt2)
+(at-copy obj21 pos2)
+(at-copy obj23 pos2)
+(truck-copy tru2)
+(package obj23)
+(package obj22)
+(airplane apn1)
+(truck-copy tru1)
+(at obj22 pos2)
+(location-copy pos2)
+(at apn1 apt2)
+(at obj11 pos1)
+(location-copy apt1)
+(at tru2 pos2)
+(city-copy cit2)
+(in-city pos1 cit1)
+(location pos2)
+(in-city-copy apt1 cit1)
+(location apt1)
+(at obj21 pos2)
+(in-city pos2 cit2)
+(at obj23 pos2)
+(at-copy obj13 pos1)
+(package obj12)
+(package obj11)
+(package obj21)
+(city cit2)
+(airport apt1)
+(at-copy tru1 pos1)
+(in-city-copy apt2 cit2)
+(package-copy obj23)
+(package-copy obj22))                        (:goal (and
+		(at obj11 apt1)
+		(at obj23 pos1)
+		(at obj13 apt1)
+		(at obj21 pos1)
+		(invalid )))                        )

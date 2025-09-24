@@ -1,0 +1,6 @@
+cut-board-small,boardsize,effNeg,1
+do-saw-small,treatment,effPos,-1
+do-plane,treatment,effPos,-1
+do-saw-small,unused,effNeg,-1
+do-spray-varnish,colour,effNeg,-1
+do-grind,grind-treatment-change,effPos,1

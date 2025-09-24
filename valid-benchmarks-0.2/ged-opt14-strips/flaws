@@ -1,0 +1,10 @@
+reset-1,idle,effPos,-1
+continue-cut,inverse-splice-next,precPos,1
+invert-single-gene-a,splice-point-2,effNeg,1
+begin-inverse-splice-special-case,s-last,precNeg,1
+begin-cut,last-cut-point,effPos,-1
+end-cut-1,cw,effNeg,-1
+begin-inverse-splice,have-cut,precPos,-1
+begin-inverse-splice-special-case,have-cut,effNeg,-1
+continue-inverse-splice-1a,present,effPos,1
+reset-1,last-cut-point,precPos,-1

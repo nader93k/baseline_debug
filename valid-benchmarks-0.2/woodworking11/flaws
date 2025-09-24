@@ -1,0 +1,6 @@
+cut-board-large,boardsize,effPos,-1
+do-spray-varnish,unused,precPos,1
+do-immersion-varnish,is-smooth,precPos,1
+cut-board-large,boardsize-successor,effPos,1
+do-saw-large,unused,effNeg,-1
+cut-board-medium,unused,effNeg,-1

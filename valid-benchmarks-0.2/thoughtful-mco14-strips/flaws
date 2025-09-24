@@ -1,0 +1,10 @@
+col-to-home-b,bottomcol,precPos,1
+tal-to-col-b,bottomcol,effNeg,1
+home-to-col,ace,effNeg,1
+col-to-home,faceup,effPos,-1
+turn-deck-a,faceup,effNeg,1
+tal-to-col-c,on,effPos,1
+tal-to-home-d,faceup,effPos,1
+tal-to-col-e,king,precPos,-1
+move-col-to-col,clear,effNeg,-1
+move-col-to-col-c,colspace,effNeg,-1

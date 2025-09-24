@@ -1,0 +1,4 @@
+unload-truck,in-city,precPos,1
+load-airplane,airport,effNeg,1
+load-airplane,at,precPos,-1
+unload-truck,city,effPos,1
