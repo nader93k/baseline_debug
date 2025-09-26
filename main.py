@@ -100,6 +100,7 @@ if __name__ == '__main__':
     outfile = os.path.join(root, "repairs")
     if args.outfile is not None:
         outfile = args.outfile
-    repairer.write(outfile)
+    # repairer.write(outfile)
+    repairer.enum_solutions(outfile)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

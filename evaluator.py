@@ -58,8 +58,9 @@ def clean_plan(plan_file, out_file, negative=False):
 
 def evaluate(root):
     task_names = filter(
-        lambda x: os.path.isdir(os.path.join(root, x)),
+        lambda x: os.path.isdir(os.path.join(root, x)) and not x.startswith("."),
         os.listdir(root))
+
     for task_name in task_names:
         task_dir = os.path.join(root, task_name)
         white_dir = os.path.join(task_dir, "white-list")
@@ -78,7 +79,7 @@ def evaluate(root):
             with open(plan_outfile + ".idx", "w") as f:
                 f.write(str(idx))
     for i in range(args.iters):
-        outfile = os.path.join(root, "repairs.{}".format(i + 1))
+        outfile = os.path.join(root, "repairs_enum.{}".format(i + 1))
         cmd = [
             "time",
             "timeout",
@@ -99,7 +100,9 @@ def evaluate(root):
             cmd, executable="/bin/bash",
             shell=True, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE, text=True)
-        _, errs = proc.communicate()
+        out, errs = proc.communicate()
+        # print("Captured stdout:", out)
+        # print("Captured stderr:", errs)
         if proc.returncode != 0:
             domain = root.split("/")[-1]
             logging.error(domain + ":" + errs)
@@ -108,7 +111,7 @@ def evaluate(root):
         wall_time = times[-3].split('\t')[-1]
         minutes, seconds = wall_time.split("m")[0], wall_time.split("m")[-1][:-1]
         total_secs = float(minutes) * 60 + float(seconds)
-        time_file = os.path.join(root, "time.{}".format(i + 1))
+        time_file = os.path.join(root, "time_enum.{}".format(i + 1))
         with open(time_file, "w") as f:
             f.write(str(total_secs))
 
@@ -116,6 +119,8 @@ def evaluate(root):
 if __name__ == '__main__':
     benchmarks = []
     for domain_name in os.listdir(args.benchmarks_dir):
+        if domain_name.startswith('.'):
+            continue
         domain_dir = os.path.join(
             args.benchmarks_dir, domain_name)
         benchmarks.append(domain_dir)
