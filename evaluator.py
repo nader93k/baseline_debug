@@ -79,7 +79,7 @@ def evaluate(root):
             with open(plan_outfile + ".idx", "w") as f:
                 f.write(str(idx))
     for i in range(args.iters):
-        outfile = os.path.join(root, "repairs_enum.{}".format(i + 1))
+        # outfile = os.path.join(root, "conflicts.{}".format(i + 1))
         cmd = [
             "time",
             "timeout",
@@ -89,8 +89,10 @@ def evaluate(root):
             root,
             "--domain_file",
             "domain-modified.pddl",
-            "--outfile",
-            outfile]
+            # "--outfile",
+            # outfile,
+            "--iteration",
+            str(i+1)]
         if args.ignore_white_list:
             cmd.append("--ignore_white_list")
         elif args.ignore_black_list:
@@ -111,7 +113,7 @@ def evaluate(root):
         wall_time = times[-3].split('\t')[-1]
         minutes, seconds = wall_time.split("m")[0], wall_time.split("m")[-1][:-1]
         total_secs = float(minutes) * 60 + float(seconds)
-        time_file = os.path.join(root, "time_enum.{}".format(i + 1))
+        time_file = os.path.join(root, "time.{}".format(i + 1))
         with open(time_file, "w") as f:
             f.write(str(total_secs))
 

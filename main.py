@@ -41,6 +41,9 @@ parser.add_argument(
     "--outfile", type=str, default="repairs",
     help="the output file containing found repairs")
 parser.add_argument(
+    "--iteration", type=int,
+    help="experiment number")
+parser.add_argument(
     "--ignore_white_list", action="store_true",
     help="ignore white list plans")
 parser.add_argument(
@@ -97,10 +100,17 @@ if __name__ == '__main__':
             continue
         instances.append((task, plans))
     repairer = Repairer(domain, instances)
-    outfile = os.path.join(root, "repairs")
-    if args.outfile is not None:
-        outfile = args.outfile
-    # repairer.write(outfile)
+
+    # outfile = os.path.join(root, "repairs")
+    # if args.outfile is not None:
+    #     outfile = args.outfile
+
+    iter = args.iteration
+    outfile = os.path.join(root, f"repairs.{iter}")
+    repairer.write(outfile)
+    outfile = os.path.join(root, f"repairs_enum.{iter}")
     repairer.enum_solutions(outfile)
+    outfile = os.path.join(root, f"conflicts.{iter}")
+    repairer.write_conflicts(outfile)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

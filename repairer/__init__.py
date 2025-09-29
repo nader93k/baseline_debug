@@ -69,6 +69,24 @@ class Repairer:
         serializable = sorted([sorted(fs) for fs in repairs])
         with open(outfile, "w") as f:
             json.dump(serializable, f, indent=4)
+    
+    def write_conflicts(self, outfile):
+        repairs = set()
+        serializable = []
+        conflicts = self._hitter.get_conflicts()
+        if conflicts:
+            for conf in conflicts:
+                repairs.add(
+                    frozenset(
+                        str(self._idx_to_repair[x]) if x > 0 else "(neg) " + str(self._idx_to_repair[-x])
+                        for x in conf
+                    )
+                )
+            serializable = sorted([sorted(r) for r in repairs])
+
+        with open(outfile, "w") as f:
+            json.dump(serializable, f, indent=4)
+        
 
     def print_repairs(self):
         for r in self._repairs:
