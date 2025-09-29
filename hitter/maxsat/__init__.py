@@ -14,6 +14,9 @@ class MaxSATHitter:
             self._wcnf.append(conflict)
         else:
             self._wcnf.append(conflict, weight)
+    
+    def get_conflicts(self):
+        return [clause for clause in self._wcnf.hard]
 
     def top(self):
         solver = FM(self._wcnf)
