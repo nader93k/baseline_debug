@@ -1,0 +1,4 @@
+paint-down,down,effNeg,1
+left,clear,effPos,-1
+paint-up,up,precPos,-1
+right,up,effPos,1
