@@ -4,8 +4,9 @@ import logging
 import argparse
 import subprocess
 import multiprocessing
-
 from tqdm import tqdm
+
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -99,29 +100,36 @@ def evaluate(root):
             cmd.append("--ignore_black_list")
         cmd = " ".join(cmd)
         proc = subprocess.Popen(
-            cmd, executable="/bin/bash",
-            shell=True, stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE, text=True)
-        out, errs = proc.communicate()
+            cmd,
+            executable="/bin/bash",
+            shell=True,
+            stdin=sys.stdin,
+            stdout=sys.stdout,
+            stderr=sys.stderr,
+            text=True)
+        proc.wait()
+        # out, errs = proc.communicate()
         # print("Captured stdout:", out)
         # print("Captured stderr:", errs)
-        if proc.returncode != 0:
-            domain = root.split("/")[-1]
-            logging.error(domain + ":" + errs)
-            break
-        times = [e for e in errs.split("\n") if e]
-        wall_time = times[-3].split('\t')[-1]
-        minutes, seconds = wall_time.split("m")[0], wall_time.split("m")[-1][:-1]
-        total_secs = float(minutes) * 60 + float(seconds)
-        time_file = os.path.join(root, "time.{}".format(i + 1))
-        with open(time_file, "w") as f:
-            f.write(str(total_secs))
+        # if errs:
+        #     domain = root.split("/")[-1]
+        #     logging.error(domain + ":" + errs)
+        #     break
+        # times = [e for e in errs.split("\n") if e]
+        # wall_time = times[-3].split('\t')[-1]
+        # minutes, seconds = wall_time.split("m")[0], wall_time.split("m")[-1][:-1]
+        # total_secs = float(minutes) * 60 + float(seconds)
+        # time_file = os.path.join(root, "time.{}".format(i + 1))
+        # with open(time_file, "w") as f:
+        #     f.write(str(total_secs))
 
 
 if __name__ == '__main__':
     benchmarks = []
     for domain_name in os.listdir(args.benchmarks_dir):
         if domain_name.startswith('.'):
+            continue
+        if domain_name != "debug":
             continue
         domain_dir = os.path.join(
             args.benchmarks_dir, domain_name)

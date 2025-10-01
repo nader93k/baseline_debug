@@ -5,7 +5,11 @@ from model.plan import *
 import logging
 from typing import Dict, List, Tuple, Optional
 import json
+import pdb
+from remote_pdb import RemotePdb
 
+
+DEBUG_FILE = "/Users/u7899572/Git/baseline_debug/debug.txt"
 
 class Repairer:
     def __init__(self,
@@ -18,6 +22,7 @@ class Repairer:
         _repair_to_idx = {}
         _idx_to_repair = {}
         hitter = MaxSATHitter()
+        self.debug_conflicts = []
         while True:
             candidate = hitter.top()
             candidate = set(_idx_to_repair[x] for x in candidate)
@@ -26,10 +31,16 @@ class Repairer:
                 msg = str(c) + "({})".format(_repair_to_idx[c])
                 logging.debug(msg)
             logging.debug("end printing candidate")
+
+            with open(DEBUG_FILE, 'a') as f:
+                f.write(f'Applying repairs: {[str(c) for c in candidate]}\n')
+
             domain.repairs = candidate
             domain.update()
             domain.repaired = True
-            for instance in instances:
+            # pdb.set_trace()
+            # RemotePdb('127.0.0.1', 4444).set_trace() # debug
+            for i_ins, instance in enumerate(instances):
                 task, plans = instance
                 for i, plan in enumerate(plans):
                     logging.debug("conflict for the {}th plan".format(i))
@@ -37,6 +48,11 @@ class Repairer:
                     if not succeed:
                         domain.repaired = False
                         conf = plan.compute_conflict(domain)
+
+                        with open(DEBUG_FILE, 'a') as f:
+                            f.write(f'Conflict detected in instance {i_ins}, plan {i}, plan_file={plan._plan_file}\n')
+                        plan.to_debug_data(DEBUG_FILE)
+
                         conflict = []
                         for r in conf:
                             if r not in _repair_to_idx:
@@ -52,13 +68,15 @@ class Repairer:
                                     r.condition, _repair_to_idx[r])
                             logging.debug(msg)
                         hitter.add_conflict(conflict)
+                        self.debug_conflicts.append(conflict)
                     logging.debug("end conflict for the {}th plan".format(i))
             if domain.repaired:
                 self._hitter = hitter
                 self._idx_to_repair = _idx_to_repair
                 self._repairs = candidate
                 break
-        
+
+
     def enum_solutions(self, outfile):
         min_card_diags = self._hitter.top_enum()
         repairs = set()
@@ -70,23 +88,38 @@ class Repairer:
         with open(outfile, "w") as f:
             json.dump(serializable, f, indent=4)
     
-    def write_conflicts(self, outfile):
+
+    def format_conflicts(self, conflicts):
         repairs = set()
-        serializable = []
-        conflicts = self._hitter.get_conflicts()
-        if conflicts:
-            for conf in conflicts:
-                repairs.add(
-                    frozenset(
-                        str(self._idx_to_repair[x]) if x > 0 else "(neg) " + str(self._idx_to_repair[-x])
-                        for x in conf
-                    )
+        for conf in conflicts:
+            repairs.add(
+                frozenset(
+                    str(self._idx_to_repair[x]) if x > 0 else "(neg) " + str(self._idx_to_repair[-x])
+                    for x in conf
                 )
-            serializable = sorted([sorted(r) for r in repairs])
+            )
+        serializable = sorted([sorted(r) for r in repairs])
+        return serializable
+    
+
+    def write_conflicts(self, outfile):
+        conflicts = self._hitter.get_conflicts()
+        serializable = []
+        if conflicts:
+            serializable = self.format_conflicts(conflicts)
 
         with open(outfile, "w") as f:
             json.dump(serializable, f, indent=4)
-        
+
+    
+    def write_debug_conflicts(self, outfile):
+        debug_data = {}
+        for i, conflicts in enumerate(self.debug_conflicts):
+            serializable = self.format_conflicts([conflicts])
+            debug_data[f'iteration_{i}'] = serializable
+        with open(outfile, "w") as f:
+            json.dump(debug_data, f, indent=4)
+
 
     def print_repairs(self):
         for r in self._repairs:

@@ -2,3 +2,16 @@
 __pycache__/
 log
 *.sas
+
+*.DS_Store
+
+
+# Ignore the entire directory and its contents
+valid-benchmarks-0.2/*
+
+# Re-include the specific subfolder and all its contents
+!/valid-benchmarks-0.2/debug/
+!/valid-benchmarks-0.2/debug/**
+
+debug.ipynb
+valid-benchmarks-0.2/debug/.DS_Store

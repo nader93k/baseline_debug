@@ -64,6 +64,8 @@ class Plan:
         self._pos = None
         self._atom = None
 
+        self._plan_file = plan_file
+
     @property
     def executable(self):
         return self._succeed
@@ -128,6 +130,7 @@ class PositivePlan(Plan):
             self._atom = unsat_atom
             return False
         return True
+    
 
     def compute_conflict(self, domain: Domain) -> Set[Repair]:
         conflict = set()
@@ -188,6 +191,68 @@ class PositivePlan(Plan):
                     r.condition = True
                     conflict.add(r)
         return conflict
+
+
+    def to_debug_data(self, file_path: str):
+        """
+        Writes key internal data to the specified file path to understand the
+        instance's state for debugging. This method is similar to the one 
+        in NegativePlan but tailored for the PositivePlan's failure modes.
+        """
+        debug_lines = []
+
+        debug_lines.append(f"--- PositivePlan Debug Data (Output File: {file_path}) ---")
+
+        # Basic Plan data
+        debug_lines.append(f"Total Steps: {len(self._steps) if hasattr(self, '_steps') else 'N/A'}")
+        debug_lines.append(f"Variable Mappings available (per step): {len(self._var_mapping) if hasattr(self, '_var_mapping') else 'N/A'}")
+        debug_lines.append(f"Execution Success (_succeed): {getattr(self, '_succeed', 'N/A')}")
+
+
+        # Execution/Conflict Resolution State Data (if set)
+        if hasattr(self, '_succeed') and not self._succeed:
+            # Plan failed
+            debug_lines.append(f"Execution Failed: True")
+            
+            # Failure position and atom
+            failure_pos = getattr(self, '_pos', 'N/A')
+            failure_atom = getattr(self, '_atom', 'N/A')
+            debug_lines.append(f"Failed Position (_pos): {failure_pos}")
+            debug_lines.append(f"Unsatisfied Atom (_atom): {failure_atom}")
+
+            # Details about the failed step (Precondition failure) or Goal
+            if isinstance(failure_pos, int):
+                if failure_pos < len(self._steps):
+                    # Precondition failure on an action
+                    failed_step = self._steps[failure_pos]
+                    debug_lines.append(f"Failure Type: Precondition failure on Action at pos {failure_pos}")
+                    debug_lines.append(f"Failed Step: {failed_step}")
+                    if failure_pos < len(self._var_mapping) and self._var_mapping[failure_pos]:
+                        debug_lines.append(f"Failed Step Var Mapping: {self._var_mapping[failure_pos][-1]}")
+                    else:
+                        debug_lines.append("Failed Step Var Mapping: Not available.")
+                elif failure_pos == len(self._steps):
+                    # Goal failure
+                    debug_lines.append(f"Failure Type: Goal condition failure after all steps.")
+                else:
+                    debug_lines.append("Warning: Failure Position (_pos) is inconsistent.")
+            else:
+                 debug_lines.append("Warning: Failed Position (_pos) is not an integer.")
+
+        else:
+             debug_lines.append("Plan Execution Status: Success or Not executed.")
+
+
+        debug_lines.append("-----------------------------------------------------")
+
+        # Write all collected lines to the file
+        try:
+            with open(file_path, 'a') as f:
+                f.write('\n'.join(debug_lines) + '\n')
+            # You might want to print a success message to the console for user feedback
+            print(f"PositivePlan debug data successfully written to {file_path}")
+        except IOError as e:
+            print(f"Error writing debug data to file {file_path}: {e}")
 
 
 class NegativePlan(PositivePlan):
@@ -296,4 +361,63 @@ class NegativePlan(PositivePlan):
                         conflict.add(repair)
                     break
         return conflict
+    
+
+    def to_debug_data(self, file_path: str):
+        """
+        Writes key internal data to the specified file path to understand the 
+        instance's state for debugging.
+        """
+        debug_lines = []
+        
+        debug_lines.append(f"--- NegativePlan Debug Data (Output File: {file_path}) ---")
+        
+        # Data from PositivePlan
+        debug_lines.append(f"Total Steps: {len(self._steps) if hasattr(self, '_steps') else 'N/A'}")
+        debug_lines.append(f"Variable Mappings available (per step): {len(self._var_mapping) if hasattr(self, '_var_mapping') else 'N/A'}")
+        
+        # NegativePlan specific data
+        debug_lines.append(f"Index (_idx): {self._idx}")
+        
+        # Execution/Conflict Resolution State Data (if set)
+        
+        pos_is_set = hasattr(self, '_pos') and self._pos is not None
+        
+        if hasattr(self, '_succeed') and not self._succeed and pos_is_set:
+            # Plan failed *before* the focus index (_idx)
+            debug_lines.append(f"Execution Failed Before _idx: True")
+            debug_lines.append(f"Failed Position (_pos): {self._pos}")
+            debug_lines.append(f"Unsatisfied Atom (_atom): {getattr(self, '_atom', 'N/A')}")
+        elif pos_is_set:
+            # Plan failed at or before _idx, but not necessarily in the *expected* 'before' failure mode
+            debug_lines.append(f"Execution Failure Position (_pos): {self._pos}")
+            debug_lines.append(f"Unsatisfied Atom (_atom): {getattr(self, '_atom', 'N/A')}")
+        elif hasattr(self, '_pos') and self._pos is None:
+            # This state often means the action at _idx was applicable (unexpectedly successful/applicable)
+            debug_lines.append("Plan Execution Status: Action at _idx was applicable (unexpectedly successful/applicable or fully executed)")
+        else:
+             debug_lines.append("Plan Execution Status: Not executed or state variables (_succeed, _pos, _atom) not fully set.")
+
+        # Print the focus step details if available
+        if hasattr(self, '_steps') and 0 <= self._idx < len(self._steps):
+            focus_step = self._steps[self._idx]
+            debug_lines.append(f"Focus Step ({self._idx}): {focus_step}")
+            if hasattr(self, '_var_mapping') and self._idx < len(self._var_mapping) and self._var_mapping[self._idx]:
+                 # Assumes the latest mapping is relevant
+                debug_lines.append(f"Focus Step Var Mapping: {self._var_mapping[self._idx][-1]}")
+            else:
+                debug_lines.append("Focus Step Var Mapping: Not available.")
+        else:
+            debug_lines.append("Warning: Focus Index (_idx) is out of bounds for the plan steps.")
+
+        debug_lines.append("-----------------------------------------------------")
+
+        # Write all collected lines to the file
+        try:
+            with open(file_path, 'a') as f:
+                f.write('\n'.join(debug_lines) + '\n')
+            # You might want to print a success message to the console for user feedback
+            print(f"Debug data successfully written to {file_path}")
+        except IOError as e:
+            print(f"Error writing debug data to file {file_path}: {e}")
 

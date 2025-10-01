@@ -63,16 +63,10 @@ class RepairPrec(Repair):
         super().__init__(action_name, atom, operation)
 
     def __str__(self):
-        # if self._operation == -1:
-        #     return "Delete {} from Precondition: {}".format(
-        #             self._atom, self._action_name)
-        # else:
-        #     return "Add {} to Precondition: {}".format(
-        #             self._atom, self._action_name)
         component = "precPos"
         if self._atom.negated:
             component = "precNeg"
-        paras = [self._action_name, self._atom.predicate, component, str(self._operation)]
+        paras = [self._action_name, self._atom.pddl(), component, str(self._operation)]
         msg = ",".join(paras)
         return msg
 
@@ -107,16 +101,10 @@ class RepairEffs(Repair):
         super().__init__(action_name, atom, operation)
 
     def __str__(self):
-        # if self._operation == -1:
-        #     return "Delete {} from Effects: {}".format(
-        #             self._atom, self._action_name)
-        # else:
-        #     return "Add {} to Effects: {}".format(
-        #             self._atom, self._action_name)
         component = "effPos"
         if self._atom.negated:
             component = "effNeg"
-        paras = [self._action_name, self._atom.predicate, component, str(self._operation)]
+        paras = [self._action_name, self._atom.pddl(), component, str(self._operation)]
         msg = ",".join(paras)
         return msg
 
