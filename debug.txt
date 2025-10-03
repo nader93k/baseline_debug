@@ -1,0 +1,21 @@
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/valid-benchmarks-0.2/debug/opt-p01-001/black-list/inval-plan
+--- NegativePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 11
+Variable Mappings available (per step): 11
+Index (_idx): 0
+Plan Execution Status: Action at _idx was applicable (unexpectedly successful/applicable or fully executed)
+Focus Step (0): ('paint-up', 'robot1', 'tile_3-3', 'tile_0-1', 'white')
+Focus Step Var Mapping: {'?r': <TypedObject robot1: robot>, '?y': <TypedObject tile_3-3: tile>, '?x': <TypedObject tile_0-1: tile>, '?c': <TypedObject white: color>}
+-----------------------------------------------------
+Applying repairs: ['paint-up,(not (down ?x ?y)),precNeg,1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/valid-benchmarks-0.2/debug/opt-p01-001/black-list/inval-plan
+--- NegativePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 11
+Variable Mappings available (per step): 11
+Index (_idx): 0
+Plan Execution Status: Action at _idx was applicable (unexpectedly successful/applicable or fully executed)
+Focus Step (0): ('paint-up', 'robot1', 'tile_3-3', 'tile_0-1', 'white')
+Focus Step Var Mapping: {'?r': <TypedObject robot1: robot>, '?y': <TypedObject tile_3-3: tile>, '?x': <TypedObject tile_0-1: tile>, '?c': <TypedObject white: color>}
+-----------------------------------------------------
+Applying repairs: ['paint-up,(left ?x ?y),precPos,1']
