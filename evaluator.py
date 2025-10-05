@@ -103,8 +103,8 @@ def evaluate(root):
             shell=True, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE, text=True)
         out, errs = proc.communicate()
-        # print("Captured stdout:", out)
-        # print("Captured stderr:", errs)
+        print("Captured stdout:", out)
+        print("Captured stderr:", errs)
         if proc.returncode != 0:
             domain = root.split("/")[-1]
             logging.error(domain + ":" + errs)
