@@ -19,3 +19,816 @@ Focus Step (0): ('paint-up', 'robot1', 'tile_3-3', 'tile_0-1', 'white')
 Focus Step Var Mapping: {'?r': <TypedObject robot1: robot>, '?y': <TypedObject tile_3-3: tile>, '?x': <TypedObject tile_0-1: tile>, '?c': <TypedObject white: color>}
 -----------------------------------------------------
 Applying repairs: ['paint-up,(left ?x ?y),precPos,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/valid-benchmarks-0.2/debug/opt-p01-001/black-list/inval-plan
+--- NegativePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 11
+Variable Mappings available (per step): 11
+Index (_idx): 0
+Plan Execution Status: Action at _idx was applicable (unexpectedly successful/applicable or fully executed)
+Focus Step (0): ('paint-up', 'robot1', 'tile_3-3', 'tile_0-1', 'white')
+Focus Step Var Mapping: {'?r': <TypedObject robot1: robot>, '?y': <TypedObject tile_3-3: tile>, '?x': <TypedObject tile_0-1: tile>, '?c': <TypedObject white: color>}
+-----------------------------------------------------
+Applying repairs: ['paint-up,(up ?y ?x),precPos,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),effNeg,1', 'a3,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(g ),precPos,-1', 'a1,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(g ),precPos,-1', 'a1,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a4,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 4
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 4
+Failed Step: ('a5',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1', 'a1,(g ),precPos,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(not (f )),effNeg,1', 'a2,(f ),effPos,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a4,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 4
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 4
+Failed Step: ('a5',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1', 'a2,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/optimal/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(g ),precPos,-1', 'a1,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1', 'a1,(g ),precPos,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1', 'a1,(g ),precPos,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(g ),precPos,-1', 'a1,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/plsrun/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 1
+Variable Mappings available (per step): 1
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 0
+Unsatisfied Atom (_atom): Atom g()
+Failure Type: Precondition failure on Action at pos 0
+Failed Step: ('a1',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a1,(g ),precPos,-1', 'a1,(not (f )),precNeg,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1', 'a2,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(not (f )),effNeg,1', 'a2,(f ),effPos,-1']
+Applying repairs: []
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a2,(f ),effPos,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 2
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 2
+Failed Step: ('a3',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1']
+Conflict detected in instance 0, plan 0, plan_file=/Users/u7899572/Git/baseline_debug/debench/completeness/p1/white-list/val-plan
+--- PositivePlan Debug Data (Output File: /Users/u7899572/Git/baseline_debug/debug.txt) ---
+Total Steps: 5
+Variable Mappings available (per step): 5
+Execution Success (_succeed): False
+Execution Failed: True
+Failed Position (_pos): 3
+Unsatisfied Atom (_atom): NegatedAtom f()
+Failure Type: Precondition failure on Action at pos 3
+Failed Step: ('a4',)
+Failed Step Var Mapping: {}
+-----------------------------------------------------
+Applying repairs: ['a3,(not (f )),precNeg,-1', 'a3,(not (f )),effNeg,1']
