@@ -1,22 +1,22 @@
 [
     [
-        "colfromfreecell,cellspace,effPos,1",
-        "move,suit,precPos,-1",
-        "sendtofree-b,cellspace,effNeg,1"
+        "colfromfreecell,(cellspace ?ncells),effPos,1",
+        "move,(suit ?oldcard ?card),precPos,-1",
+        "sendtofree-b,(not (cellspace ?cells)),effNeg,1"
     ],
     [
-        "move,suit,precPos,-1",
-        "sendtofree,cellspace,effNeg,-1",
-        "sendtofree-b,cellspace,effNeg,1"
+        "move,(suit ?oldcard ?card),precPos,-1",
+        "sendtofree,(cellspace ?cells),effPos,1",
+        "sendtofree-b,(not (cellspace ?cells)),effNeg,1"
     ],
     [
-        "move,suit,precPos,-1",
-        "sendtofree,cellspace,effPos,1",
-        "sendtofree-b,cellspace,effNeg,1"
+        "move,(suit ?oldcard ?card),precPos,-1",
+        "sendtofree,(not (cellspace ?cells)),effNeg,-1",
+        "sendtofree-b,(not (cellspace ?cells)),effNeg,1"
     ],
     [
-        "move,suit,precPos,-1",
-        "sendtofree-b,cellspace,effNeg,1",
-        "sendtofree-b,cellspace,precPos,-1"
+        "move,(suit ?oldcard ?card),precPos,-1",
+        "sendtofree-b,(cellspace ?cells),precPos,-1",
+        "sendtofree-b,(not (cellspace ?cells)),effNeg,1"
     ]
 ]
