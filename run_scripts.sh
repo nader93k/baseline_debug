@@ -13,3 +13,10 @@ python evaluator.py \
 
 # git reset
 git restore valid-benchmarks-0.2
+
+
+python evaluator.py \
+    /Users/u7899572/Git/baseline_debug/debench/ \
+    --num_cpus 1 \
+    --iters 1 \
+    --time_out 150

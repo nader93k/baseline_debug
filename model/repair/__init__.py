@@ -2,8 +2,8 @@ from fd.pddl.conditions import Conjunction, Atom, NegatedAtom
 from fd.pddl.actions import Action
 from fd.pddl.conditions import Truth
 from fd.pddl.effects import Effect
-
 from typing import Union
+
 
 
 class Repair:

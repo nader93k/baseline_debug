@@ -107,10 +107,10 @@ def evaluate(root):
             stdout=sys.stdout,
             stderr=sys.stderr,
             text=True)
-        proc.wait()
-        # out, errs = proc.communicate()
-        # print("Captured stdout:", out)
-        # print("Captured stderr:", errs)
+        # proc.wait()
+        out, errs = proc.communicate()
+        print("Captured stdout:", out)
+        print("Captured stderr:", errs)
         # if errs:
         #     domain = root.split("/")[-1]
         #     logging.error(domain + ":" + errs)
@@ -129,8 +129,8 @@ if __name__ == '__main__':
     for domain_name in os.listdir(args.benchmarks_dir):
         if domain_name.startswith('.'):
             continue
-        if domain_name != "debug":
-            continue
+        # if domain_name != "debug":
+        #     continue
         domain_dir = os.path.join(
             args.benchmarks_dir, domain_name)
         benchmarks.append(domain_dir)
