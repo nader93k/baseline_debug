@@ -1,230 +1,178 @@
 [
     [
-        "down,clear,precPos,-1",
-        "paint-up,available-color,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(clear ?x),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,available-color,precPos,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(down ?x ?y),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,clear,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(free-color ?r),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,clear,precPos,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(left ?y ?x),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,down,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(not (down ?x ?x)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,down,precPos,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(not (painted ?x ?c)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,free-color,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(not (right ?y ?y)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,free-color,precPos,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(not (robot-has ?r ?c)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,left,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(not (up ?y ?y)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,left,precPos,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(robot-at ?r ?y),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,painted,precNeg,1"
+        "down,(clear ?y),precPos,-1",
+        "paint-up,(up ?y ?x),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,painted,precPos,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(clear ?x),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,right,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(down ?x ?y),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,right,precPos,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(free-color ?r),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,robot-at,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(left ?y ?x),precPos,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,robot-at,precPos,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(not (down ?x ?x)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,robot-has,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(not (painted ?x ?c)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,up,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(not (right ?y ?y)),precNeg,1"
     ],
     [
-        "down,clear,precPos,-1",
-        "paint-up,up,precPos,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(not (robot-has ?r ?c)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,available-color,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(not (up ?y ?y)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,available-color,precPos,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(robot-at ?r ?y),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,clear,precNeg,1"
+        "left,(clear ?x),effPos,1",
+        "paint-up,(up ?y ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,clear,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(clear ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,down,precNeg,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(down ?x ?y),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,down,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(free-color ?r),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,free-color,precNeg,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(left ?y ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,free-color,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(not (down ?x ?x)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,left,precNeg,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(not (painted ?x ?c)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,left,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(not (right ?y ?y)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,painted,precNeg,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(not (robot-has ?r ?c)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,painted,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(not (up ?y ?y)),precNeg,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,right,precNeg,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(robot-at ?r ?y),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,right,precPos,1"
+        "left,(clear ?y),effPos,1",
+        "paint-up,(up ?y ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,robot-at,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(clear ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,robot-at,precPos,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(down ?x ?y),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,robot-has,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(free-color ?r),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,up,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(left ?y ?x),precPos,1"
     ],
     [
-        "left,clear,effNeg,-1",
-        "paint-up,up,precPos,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(not (down ?x ?x)),precNeg,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,available-color,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(not (painted ?x ?c)),precNeg,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,available-color,precPos,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(not (right ?y ?y)),precNeg,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,clear,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(not (robot-has ?r ?c)),precNeg,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,clear,precPos,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(not (up ?y ?y)),precNeg,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,down,precNeg,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(robot-at ?r ?y),precPos,1"
     ],
     [
-        "left,clear,effPos,1",
-        "paint-up,down,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,free-color,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,free-color,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,left,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,left,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,painted,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,painted,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,right,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,right,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,robot-at,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,robot-at,precPos,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,robot-has,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,up,precNeg,1"
-    ],
-    [
-        "left,clear,effPos,1",
-        "paint-up,up,precPos,1"
+        "left,(not (clear ?y)),effNeg,-1",
+        "paint-up,(up ?y ?x),precPos,1"
     ]
 ]
