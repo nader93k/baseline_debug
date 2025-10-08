@@ -112,7 +112,9 @@ if __name__ == '__main__':
     repairer.enum_solutions(outfile)
     outfile = os.path.join(root, f"conflicts.{iter}")
     repairer.write_conflicts(outfile)
-    outfile = os.path.join(root, f"debug_confs.{iter}")
-    repairer.write_debug_conflicts(outfile)
+    # outfile = os.path.join(root, f"debug_confs.{iter}")
+    # repairer.write_debug_conflicts(outfile)
+    outfile = os.path.join(root, f"debug_err_repair.{iter}")
+    repairer.write_iteration_debug(outfile)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

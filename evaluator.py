@@ -129,8 +129,8 @@ if __name__ == '__main__':
     for domain_name in os.listdir(args.benchmarks_dir):
         if domain_name.startswith('.'):
             continue
-        # if domain_name != "debug":
-        #     continue
+        if domain_name != "floortile-opt11-strips":
+            continue
         domain_dir = os.path.join(
             args.benchmarks_dir, domain_name)
         benchmarks.append(domain_dir)
