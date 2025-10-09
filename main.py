@@ -106,15 +106,15 @@ if __name__ == '__main__':
     #     outfile = args.outfile
 
     iter = args.iteration
-    outfile = os.path.join(root, f"repairs.{iter}")
+    outfile = os.path.join(root, f"X_repairs.{iter}")
     repairer.write(outfile)
-    outfile = os.path.join(root, f"repairs_enum.{iter}")
+    outfile = os.path.join(root, f"X_repairs_enum.{iter}")
     repairer.enum_solutions(outfile)
-    outfile = os.path.join(root, f"conflicts.{iter}")
+    outfile = os.path.join(root, f"X_conflicts.{iter}")
     repairer.write_conflicts(outfile)
     # outfile = os.path.join(root, f"debug_confs.{iter}")
     # repairer.write_debug_conflicts(outfile)
-    outfile = os.path.join(root, f"debug_err_repair.{iter}")
+    outfile = os.path.join(root, f"X_debug_err_repair.{iter}")
     repairer.write_iteration_debug(outfile)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

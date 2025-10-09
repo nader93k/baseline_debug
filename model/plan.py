@@ -250,7 +250,7 @@ class PositivePlan(Plan):
             with open(file_path, 'a') as f:
                 f.write('\n'.join(debug_lines) + '\n')
             # You might want to print a success message to the console for user feedback
-            print(f"PositivePlan debug data successfully written to {file_path}")
+            # print(f"PositivePlan debug data successfully written to {file_path}")
         except IOError as e:
             print(f"Error writing debug data to file {file_path}: {e}")
 
@@ -417,7 +417,7 @@ class NegativePlan(PositivePlan):
             with open(file_path, 'a') as f:
                 f.write('\n'.join(debug_lines) + '\n')
             # You might want to print a success message to the console for user feedback
-            print(f"Debug data successfully written to {file_path}")
+            # print(f"Debug data successfully written to {file_path}")
         except IOError as e:
             print(f"Error writing debug data to file {file_path}: {e}")
 

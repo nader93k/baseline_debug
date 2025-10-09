@@ -26,17 +26,21 @@ class Repairer:
         self.debug_err = []
         self.debug_iter_repair = []
 
+        di = 0
         while True:
-            candidate = hitter.top()
-            candidate = set(_idx_to_repair[x] for x in candidate)
-            logging.debug("printing candidate repairs:")
-            for c in candidate:
-                msg = str(c) + "({})".format(_repair_to_idx[c])
-                logging.debug(msg)
-            logging.debug("end printing candidate")
+            di += 1
+            # candidate = hitter.top()
+            # candidate = set(_idx_to_repair[x] for x in candidate)
+            candidate = self.get_pos_conflicts(hitter, _idx_to_repair)
+            
+            # logging.debug("printing candidate repairs:")
+            # for c in candidate:
+            #     msg = str(c) + "({})".format(_repair_to_idx[c])
+                # logging.debug(msg)
+            # logging.debug("end printing candidate")
 
-            with open(DEBUG_FILE, 'a') as f:
-                f.write(f'Applying repairs: {[str(c) for c in candidate]}\n')
+            # with open(DEBUG_FILE, 'a') as f:
+            #     f.write(f'Applying repairs: {[str(c) for c in candidate]}\n')
 
             domain.repairs = candidate
             self.debug_iter_repair.append(candidate)
@@ -49,15 +53,15 @@ class Repairer:
             for i_ins, instance in enumerate(instances):
                 task, plans = instance
                 for i, plan in enumerate(plans):
-                    logging.debug("conflict for the {}th plan".format(i))
+                    # logging.debug("conflict for the {}th plan".format(i))
                     succeed = plan.execute(domain, task)
                     debug_err.append((str(plan._atom), plan._plan_file))
                     if not succeed:
                         domain.repaired = False
                         conf = plan.compute_conflict(domain)
 
-                        with open(DEBUG_FILE, 'a') as f:
-                            f.write(f'Conflict detected in instance {i_ins}, plan {i}, plan_file={plan._plan_file}\n')
+                        # with open(DEBUG_FILE, 'a') as f:
+                        #     f.write(f'Conflict detected in instance {i_ins}, plan {i}, plan_file={plan._plan_file}\n')
                         plan.to_debug_data(DEBUG_FILE)
                         conflict = []
                         # Collect unsatisfied preconditions and plan file
@@ -71,15 +75,24 @@ class Repairer:
                                 conflict.append(-_repair_to_idx[r])
                             else:
                                 conflict.append(_repair_to_idx[r])
-                            msg = str(r) + " condition: {} -- {}".format(
-                                    r.condition, _repair_to_idx[r])
-                            logging.debug(msg)
+                            # msg = str(r) + " condition: {} -- {}".format(
+                            #         r.condition, _repair_to_idx[r])
+                            # logging.debug(msg)
                         hitter.add_conflict(conflict)
                         debug_conflicts.append(conflict)
                     logging.debug("end conflict for the {}th plan".format(i))
             self.debug_err.append(debug_err)
             self.debug_conflicts.append(debug_conflicts)
+    
             if domain.repaired:
+                candidate = hitter.top()
+                self._hitter = hitter
+                self._idx_to_repair = _idx_to_repair
+                self._repairs = candidate
+                break
+        
+            if di > 4:
+                print("Too many instances, stop here")
                 self._hitter = hitter
                 self._idx_to_repair = _idx_to_repair
                 self._repairs = candidate
@@ -110,6 +123,16 @@ class Repairer:
         serializable = sorted([sorted(r) for r in repairs])
         return serializable
     
+    @staticmethod
+    def get_pos_conflicts(hitter, _idx_to_repair):
+        conflicts = hitter.get_conflicts()
+        repairs = set()
+        for conf in conflicts:
+            repairs.update(
+                _idx_to_repair[r] for r in conf if r > 0
+            )
+        print(len(repairs))
+        return repairs
 
     def write_conflicts(self, outfile):
         conflicts = self._hitter.get_conflicts()
