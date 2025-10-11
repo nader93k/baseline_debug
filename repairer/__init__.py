@@ -15,6 +15,9 @@ class Repairer:
     def __init__(self,
                  domain: Domain,
                  instances: List[Tuple[Task, List[Plan]]]):
+        self.domain = domain
+        self.instances = instances
+
         for instance in instances:
             task, plans = instance
             for plan in plans:
@@ -84,10 +87,37 @@ class Repairer:
                 self._idx_to_repair = _idx_to_repair
                 self._repairs = candidate
                 break
+    
+    def filter_solutions(self, diags):
+        sol_diags = set()
+        domain = self.domain
+        instances = self.instances
+
+        for instance in instances:
+            task, plans = instance
+            for plan in plans:
+                plan.compute_subs(domain, task)
+        
+        for candidate in diags:
+            candidate = set(self._idx_to_repair[x] for x in candidate)
+            domain.repairs = candidate
+            domain.update()
+            domain.repaired = True
+            for i_ins, instance in enumerate(instances):
+                task, plans = instance
+                for i, plan in enumerate(plans):
+                    succeed = plan.execute(domain, task)
+                    if not succeed:
+                        domain.repaired = False
+            if domain.repaired:
+                sol_diags.add(frozenset(candidate))
+        
+        return sol_diags
 
 
     def enum_solutions(self, outfile):
         min_card_diags = self._hitter.top_enum()
+        # repairs = self.filter_solutions(min_card_diags)
         repairs = set()
         for diag in min_card_diags:
             repairs.add(
