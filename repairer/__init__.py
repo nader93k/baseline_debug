@@ -89,7 +89,7 @@ class Repairer:
                 break
     
     def filter_solutions(self, diags):
-        sol_diags = set()
+        sol_diags = []
         domain = self.domain
         instances = self.instances
 
@@ -110,19 +110,27 @@ class Repairer:
                     if not succeed:
                         domain.repaired = False
             if domain.repaired:
-                sol_diags.add(frozenset(candidate))
+                sol_diags.append(candidate)
         
         return sol_diags
 
 
     def enum_solutions(self, outfile):
         min_card_diags = self._hitter.top_enum()
-        # repairs = self.filter_solutions(min_card_diags)
+
         repairs = set()
-        for diag in min_card_diags:
+        sol_diags = self.filter_solutions(min_card_diags)
+        for diag in sol_diags:
             repairs.add(
-                frozenset(str(self._idx_to_repair[x]) for x in diag)
+                frozenset(str(x) for x in diag)
             )
+
+        # repairs = set()
+        # for diag in min_card_diags:
+        #     repairs.add(
+        #         frozenset(str(self._idx_to_repair[x]) for x in diag)
+        #     )
+
         serializable = sorted([sorted(fs) for fs in repairs])
         with open(outfile, "w") as f:
             json.dump(serializable, f, indent=4)
